@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="account_journal_sale_credit_note" model="account.journal">
+            <field name="name">Diario Nota de Crédito Ventas</field>
+            <field name="type">sale</field>
+            <field name="code">NCV</field>
+        </record>
+        <record id="account_journal_sale_debit_note" model="account.journal">
+            <field name="name">Diario Nota de Débito Ventas</field>
+            <field name="type">sale</field>
+            <field name="code">NDV</field>
+        </record>
+        <record id="account_journal_purchase_credit_note" model="account.journal">
+            <field name="name">Diario Nota de Crédito Compras</field>
+            <field name="type">purchase</field>
+            <field name="code">NCC</field>
+        </record>
+        <record id="account_journal_purchase_debit_note" model="account.journal">
+            <field name="name">Diario Nota de Débito Compras</field>
+            <field name="type">purchase</field>
+            <field name="code">NDC</field>
+        </record>
+    </data>
+</odoo>

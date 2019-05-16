@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>						
+<odoo>
+    <data>						
+
+        <!-- Empleado Inputs -->
+        <record id="hr_employee_data_demo" model="hr.employee">
+            <field name="name">Parra Angel</field>
+            <field name="identification_id">1234567890</field>
+        </record>
+
+        <!-- Contratos Inputs -->
+        <record id="hr_contract_data_demo" model="hr.contract">
+            <field name="name">CTN-001</field>
+            <field name="employee_id" ref="hr_employee_data_demo"/>
+            <field name="date_start">2017-06-01</field>
+            <field name="wage">1000</field>
+            <field name="struct_id" ref="hr_struct_pa"/>
+            <field name="working_hours" ref="hr_resource_monthly"/>
+            <field name="schedule_pay">bi-weekly</field>
+        </record>
+    </data>						
+</odoo>

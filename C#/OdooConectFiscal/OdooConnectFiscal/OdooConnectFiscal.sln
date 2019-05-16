@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OdooConnectFiscal", "OdooConnectFiscal.csproj", "{8A0944A9-4046-4F56-AB48-31C8A45677F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OdooConnect", "..\Connect\OdooConnect.csproj", "{4E1A0EFD-056C-4875-91CF-1037A9D4B326}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "FiscalConnect", "..\FiscalPrinter\FiscalConnect.vbproj", "{B1960D1D-0E9D-44AA-BAAD-8FBE907B511E}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Instalador", "..\Instalador\Instalador.vdproj", "{6644D96C-697F-4859-BF8E-0C893903EFD6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8A0944A9-4046-4F56-AB48-31C8A45677F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A0944A9-4046-4F56-AB48-31C8A45677F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A0944A9-4046-4F56-AB48-31C8A45677F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A0944A9-4046-4F56-AB48-31C8A45677F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E1A0EFD-056C-4875-91CF-1037A9D4B326}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E1A0EFD-056C-4875-91CF-1037A9D4B326}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E1A0EFD-056C-4875-91CF-1037A9D4B326}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E1A0EFD-056C-4875-91CF-1037A9D4B326}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1960D1D-0E9D-44AA-BAAD-8FBE907B511E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1960D1D-0E9D-44AA-BAAD-8FBE907B511E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1960D1D-0E9D-44AA-BAAD-8FBE907B511E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1960D1D-0E9D-44AA-BAAD-8FBE907B511E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6644D96C-697F-4859-BF8E-0C893903EFD6}.Debug|Any CPU.ActiveCfg = Debug
+		{6644D96C-697F-4859-BF8E-0C893903EFD6}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,11 @@
+id
+number
+date_invoice
+partner_id|1
+type
+origin
+state
+printer_list_ids|0
+invoice_line_ids
+refund_type
+amount_total

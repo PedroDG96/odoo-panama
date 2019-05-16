@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Bancos -->
+        <record id="cl_bank_01" model="res.bank">
+            <field name="name">BANESCO S.A.</field>
+            <field name="bic">BANSPAPA</field>
+        </record>
+        <record id="cl_bank_02" model="res.bank">
+            <field name="name">MULTIBANK INC.</field>
+            <field name="bic">MCTBPAPA</field>
+        </record>
+        <record id="cl_bank_03" model="res.bank">
+            <field name="name">BANISTMO S.A.</field>
+            <field name="bic">MIDLPAPA</field>
+        </record>
+    </data>
+</odoo>

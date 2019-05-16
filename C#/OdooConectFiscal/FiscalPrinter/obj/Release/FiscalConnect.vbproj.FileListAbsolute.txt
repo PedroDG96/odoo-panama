@@ -1,0 +1,9 @@
+D:\GitHub\Marlon\carlos-repo\C#\OdooConectFiscal\FiscalPrinter\bin\Release\FiscalPrinter.dll
+D:\GitHub\Marlon\carlos-repo\C#\OdooConectFiscal\FiscalPrinter\bin\Release\FiscalPrinter.pdb
+D:\GitHub\Marlon\carlos-repo\C#\OdooConectFiscal\FiscalPrinter\bin\Release\FiscalPrinter.xml
+D:\GitHub\Marlon\carlos-repo\C#\OdooConectFiscal\FiscalPrinter\bin\Release\TFHKADIR.dll
+D:\GitHub\Marlon\carlos-repo\C#\OdooConectFiscal\FiscalPrinter\obj\Release\FiscalPrinter.Resources.resources
+D:\GitHub\Marlon\carlos-repo\C#\OdooConectFiscal\FiscalPrinter\obj\Release\FiscalConnect.vbproj.GenerateResource.Cache
+D:\GitHub\Marlon\carlos-repo\C#\OdooConectFiscal\FiscalPrinter\obj\Release\FiscalPrinter.dll
+D:\GitHub\Marlon\carlos-repo\C#\OdooConectFiscal\FiscalPrinter\obj\Release\FiscalPrinter.xml
+D:\GitHub\Marlon\carlos-repo\C#\OdooConectFiscal\FiscalPrinter\obj\Release\FiscalPrinter.pdb

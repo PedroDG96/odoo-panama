@@ -1,0 +1,21 @@
+D:\GitHub\Marlon\carlos-repo\C#\OdooConectFiscal\Connect\bin\Debug\Connect.dll
+D:\GitHub\Marlon\carlos-repo\C#\OdooConectFiscal\Connect\bin\Debug\Connect.pdb
+D:\GitHub\Marlon\carlos-repo\C#\OdooConectFiscal\Connect\bin\Debug\CookComputing.XmlRpcV2.dll
+D:\GitHub\Marlon\carlos-repo\C#\OdooConectFiscal\Connect\obj\Debug\Connect.dll
+D:\GitHub\Marlon\carlos-repo\C#\OdooConectFiscal\Connect\obj\Debug\Connect.pdb
+D:\GitHub\Marlon\Impresora-fiscal-panama-cchar\C#\OdooConectFiscal\Connect\bin\Debug\Connect.dll
+D:\GitHub\Marlon\Impresora-fiscal-panama-cchar\C#\OdooConectFiscal\Connect\bin\Debug\Connect.pdb
+D:\GitHub\Marlon\Impresora-fiscal-panama-cchar\C#\OdooConectFiscal\Connect\bin\Debug\CookComputing.XmlRpcV2.dll
+D:\GitHub\Marlon\Impresora-fiscal-panama-cchar\C#\OdooConectFiscal\Connect\obj\Debug\Connect.dll
+D:\GitHub\Marlon\Impresora-fiscal-panama-cchar\C#\OdooConectFiscal\Connect\obj\Debug\Connect.pdb
+D:\VISUAL ESTUDIOS\Impresora-fiscal-panama-cchar-master\C#\OdooConectFiscal\Connect\bin\Debug\Connect.dll
+D:\VISUAL ESTUDIOS\Impresora-fiscal-panama-cchar-master\C#\OdooConectFiscal\Connect\bin\Debug\Connect.pdb
+D:\VISUAL ESTUDIOS\Impresora-fiscal-panama-cchar-master\C#\OdooConectFiscal\Connect\obj\Debug\OdooConnect.csprojResolveAssemblyReference.cache
+D:\VISUAL ESTUDIOS\Impresora-fiscal-panama-cchar-master\C#\OdooConectFiscal\Connect\obj\Debug\Connect.dll
+D:\VISUAL ESTUDIOS\Impresora-fiscal-panama-cchar-master\C#\OdooConectFiscal\Connect\obj\Debug\Connect.pdb
+C:\Users\Desarrollo-PC\AppData\Local\Temp\dsds\Impresora-fiscal-panama-cchar-master\C#\OdooConectFiscal\Connect\bin\Debug\Connect.dll
+C:\Users\Desarrollo-PC\AppData\Local\Temp\dsds\Impresora-fiscal-panama-cchar-master\C#\OdooConectFiscal\Connect\bin\Debug\Connect.pdb
+C:\Users\Desarrollo-PC\AppData\Local\Temp\dsds\Impresora-fiscal-panama-cchar-master\C#\OdooConectFiscal\Connect\bin\Debug\CookComputing.XmlRpcV2.dll
+C:\Users\Desarrollo-PC\AppData\Local\Temp\dsds\Impresora-fiscal-panama-cchar-master\C#\OdooConectFiscal\Connect\obj\Debug\OdooConnect.csproj.CoreCompileInputs.cache
+C:\Users\Desarrollo-PC\AppData\Local\Temp\dsds\Impresora-fiscal-panama-cchar-master\C#\OdooConectFiscal\Connect\obj\Debug\Connect.dll
+C:\Users\Desarrollo-PC\AppData\Local\Temp\dsds\Impresora-fiscal-panama-cchar-master\C#\OdooConectFiscal\Connect\obj\Debug\Connect.pdb

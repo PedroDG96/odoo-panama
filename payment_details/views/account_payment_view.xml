@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="details_view_account_payment_form" model="ir.ui.view">
+            <field name="name">details.view.account.payment.form</field>
+            <field name="model">account.payment</field>
+            <field name="inherit_id" ref="account.view_account_payment_form" />
+            <field name="arch" type="xml">
+                <field name="communication" position="after">
+                    <field name="journal_type" invisible="1"/>
+                    <field name="payment_number"
+                        attrs="{
+                            'invisible': [('journal_type','!=','bank')],
+                            'required': [('journal_type','=','bank')],
+                            'readonly': [('state','!=','draft')]
+                            }"/>
+                    <field name="bank_id"
+                        attrs="{
+                            'invisible': [('journal_type','!=','bank')],
+                            'required': [('journal_type','=','bank')],
+                            'readonly': [('state','!=','draft')]
+                            }"/>
+                </field>
+            </field>
+        </record>
+        
+        <record id="details_view_account_payment_invoice_form" model="ir.ui.view">
+            <field name="name">details.view.account.payment.invoice.form</field>
+            <field name="model">account.payment</field>
+            <field name="inherit_id" ref="account.view_account_payment_invoice_form" />
+            <field name="arch" type="xml">
+                <field name="communication" position="after">
+                    <field name="journal_type" invisible="1"/>
+                    <field name="payment_number"
+                        attrs="{'invisible': [('journal_type','!=','bank')], 'required': [('journal_type','=','bank')]}"/>
+                    <field name="bank_id"
+                        attrs="{'invisible': [('journal_type','!=','bank')], 'required': [('journal_type','=','bank')]}"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

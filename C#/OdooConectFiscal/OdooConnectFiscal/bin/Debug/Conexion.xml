@@ -1,0 +1,10 @@
+<Falcon>
+    <Conexion>
+        <Url>http://test.falconsolutions.cl</Url>
+        <Puerto>8069</Puerto>
+        <PuertoImpresora>COM2</PuertoImpresora>
+    </Conexion>
+    <Datos>
+        <DB>db10-panama</DB>
+    </Datos>
+</Falcon>

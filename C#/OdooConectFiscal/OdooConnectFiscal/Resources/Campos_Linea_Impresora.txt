@@ -1,0 +1,9 @@
+id
+account_id|0
+reimpresion
+id_fiscal
+serial_equipo_fiscal
+numero_comprobante
+obs
+print_date
+print_user

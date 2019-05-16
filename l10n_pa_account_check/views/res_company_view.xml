@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_res_company_form_inherited" model="ir.ui.view">
+            <field name="name">res.company.form.inherited</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="arch" type="xml">
+                <notebook>
+                    <page string="Configuración de Cheques">
+                        <group name="checks">
+                            <group name="left_checks" string="Cuentas de Cheques">
+                                <field name="check_rejected_account_id" domain="[('company_id', '=', id)]"/>
+                                <field name="check_deferred_account_id" domain="[('company_id', '=', id)]"/>
+                                <field name="check_holding_account_id" domain="[('company_id', '=', id)]" groups="base.group_no_one"/>
+                            </group>
+                            <group name="right_checks" string="Impresión">
+                                <field name="check_main_bank_id" />
+                            </group>
+                        </group>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+    </data>
+</openerp>

@@ -1,0 +1,100 @@
+C:\Users\Ariel\Documents\GitHub\carlos-repo\C#\OdooConectFiscal\OdooConnectFiscal\bin\Debug\OdooConnectFiscal.exe.config
+C:\Users\Ariel\Documents\GitHub\carlos-repo\C#\OdooConectFiscal\OdooConnectFiscal\bin\Debug\OdooConnectFiscal.exe
+C:\Users\Ariel\Documents\GitHub\carlos-repo\C#\OdooConectFiscal\OdooConnectFiscal\bin\Debug\OdooConnectFiscal.pdb
+C:\Users\Ariel\Documents\GitHub\carlos-repo\C#\OdooConectFiscal\OdooConnectFiscal\bin\Debug\Connect.dll
+C:\Users\Ariel\Documents\GitHub\carlos-repo\C#\OdooConectFiscal\OdooConnectFiscal\bin\Debug\CookComputing.XmlRpcV2.dll
+C:\Users\Ariel\Documents\GitHub\carlos-repo\C#\OdooConectFiscal\OdooConnectFiscal\bin\Debug\Connect.pdb
+C:\Users\Ariel\Documents\GitHub\carlos-repo\C#\OdooConectFiscal\OdooConnectFiscal\obj\Debug\OdooConnectFiscal.csprojResolveAssemblyReference.cache
+C:\Users\Ariel\Documents\GitHub\carlos-repo\C#\OdooConectFiscal\OdooConnectFiscal\obj\Debug\APP.Configuracion.resources
+C:\Users\Ariel\Documents\GitHub\carlos-repo\C#\OdooConectFiscal\OdooConnectFiscal\obj\Debug\APP.Factura.resources
+C:\Users\Ariel\Documents\GitHub\carlos-repo\C#\OdooConectFiscal\OdooConnectFiscal\obj\Debug\APP.Principal.resources
+C:\Users\Ariel\Documents\GitHub\carlos-repo\C#\OdooConectFiscal\OdooConnectFiscal\obj\Debug\APP.Properties.Resources.resources
+C:\Users\Ariel\Documents\GitHub\carlos-repo\C#\OdooConectFiscal\OdooConnectFiscal\obj\Debug\OdooConnectFiscal.csproj.GenerateResource.Cache
+C:\Users\Ariel\Documents\GitHub\carlos-repo\C#\OdooConectFiscal\OdooConnectFiscal\obj\Debug\OdooConnectFiscal.exe
+C:\Users\Ariel\Documents\GitHub\carlos-repo\C#\OdooConectFiscal\OdooConnectFiscal\obj\Debug\OdooConnectFiscal.pdb
+C:\Users\Ariel\Documents\GitHub\carlos-repo\C#\OdooConectFiscal\OdooConnectFiscal\obj\Debug\APP.Campos.resources
+C:\Users\Ariel\carlos-repo\C#\OdooConectFiscal\OdooConnectFiscal\bin\Debug\OdooConnectFiscal.exe.config
+C:\Users\Ariel\carlos-repo\C#\OdooConectFiscal\OdooConnectFiscal\bin\Debug\OdooConnectFiscal.exe
+C:\Users\Ariel\carlos-repo\C#\OdooConectFiscal\OdooConnectFiscal\bin\Debug\OdooConnectFiscal.pdb
+C:\Users\Ariel\carlos-repo\C#\OdooConectFiscal\OdooConnectFiscal\bin\Debug\Connect.dll
+C:\Users\Ariel\carlos-repo\C#\OdooConectFiscal\OdooConnectFiscal\bin\Debug\CookComputing.XmlRpcV2.dll
+C:\Users\Ariel\carlos-repo\C#\OdooConectFiscal\OdooConnectFiscal\bin\Debug\Connect.pdb
+C:\Users\Ariel\carlos-repo\C#\OdooConectFiscal\OdooConnectFiscal\obj\Debug\OdooConnectFiscal.csprojResolveAssemblyReference.cache
+C:\Users\Ariel\carlos-repo\C#\OdooConectFiscal\OdooConnectFiscal\obj\Debug\APP.Campos.resources
+C:\Users\Ariel\carlos-repo\C#\OdooConectFiscal\OdooConnectFiscal\obj\Debug\APP.Configuracion.resources
+C:\Users\Ariel\carlos-repo\C#\OdooConectFiscal\OdooConnectFiscal\obj\Debug\APP.Factura.resources
+C:\Users\Ariel\carlos-repo\C#\OdooConectFiscal\OdooConnectFiscal\obj\Debug\APP.Properties.Resources.resources
+C:\Users\Ariel\carlos-repo\C#\OdooConectFiscal\OdooConnectFiscal\obj\Debug\OdooConnectFiscal.csproj.GenerateResource.Cache
+C:\Users\Ariel\carlos-repo\C#\OdooConectFiscal\OdooConnectFiscal\obj\Debug\OdooConnectFiscal.exe
+C:\Users\Ariel\carlos-repo\C#\OdooConectFiscal\OdooConnectFiscal\obj\Debug\OdooConnectFiscal.pdb
+D:\GitHub\Marlon\carlos-repo\C#\OdooConectFiscal\OdooConnectFiscal\bin\Debug\OdooConnectFiscal.exe
+D:\GitHub\Marlon\carlos-repo\C#\OdooConectFiscal\OdooConnectFiscal\bin\Debug\CookComputing.XmlRpcV2.dll
+D:\GitHub\Marlon\carlos-repo\C#\OdooConectFiscal\OdooConnectFiscal\bin\Debug\OdooConnectFiscal.exe.config
+D:\GitHub\Marlon\carlos-repo\C#\OdooConectFiscal\OdooConnectFiscal\bin\Debug\Connect.dll
+D:\GitHub\Marlon\carlos-repo\C#\OdooConectFiscal\OdooConnectFiscal\bin\Debug\Connect.pdb
+D:\GitHub\Marlon\carlos-repo\C#\OdooConectFiscal\OdooConnectFiscal\obj\Debug\OdooConnectFiscal.csprojResolveAssemblyReference.cache
+D:\GitHub\Marlon\carlos-repo\C#\OdooConectFiscal\OdooConnectFiscal\obj\Debug\APP.Configuracion.resources
+D:\GitHub\Marlon\carlos-repo\C#\OdooConectFiscal\OdooConnectFiscal\obj\Debug\APP.Factura.resources
+D:\GitHub\Marlon\carlos-repo\C#\OdooConectFiscal\OdooConnectFiscal\obj\Debug\APP.Properties.Resources.resources
+D:\GitHub\Marlon\carlos-repo\C#\OdooConectFiscal\OdooConnectFiscal\obj\Debug\OdooConnectFiscal.csproj.GenerateResource.Cache
+D:\GitHub\Marlon\carlos-repo\C#\OdooConectFiscal\OdooConnectFiscal\obj\Debug\OdooConnectFiscal.exe
+D:\GitHub\Marlon\carlos-repo\C#\OdooConectFiscal\OdooConnectFiscal\obj\Debug\OdooConnectFiscal.pdb
+D:\GitHub\Marlon\carlos-repo\C#\OdooConectFiscal\OdooConnectFiscal\bin\Debug\OdooConnectFiscal.pdb
+D:\GitHub\Marlon\carlos-repo\C#\OdooConectFiscal\OdooConnectFiscal\bin\Debug\FiscalPrinter.dll
+D:\GitHub\Marlon\carlos-repo\C#\OdooConectFiscal\OdooConnectFiscal\bin\Debug\TFHKADIR.dll
+D:\GitHub\Marlon\carlos-repo\C#\OdooConectFiscal\OdooConnectFiscal\bin\Debug\FiscalPrinter.pdb
+D:\GitHub\Marlon\carlos-repo\C#\OdooConectFiscal\OdooConnectFiscal\bin\Debug\FiscalPrinter.xml
+D:\GitHub\Marlon\Impresora-fiscal-panama-cchar\C#\OdooConectFiscal\OdooConnectFiscal\bin\Debug\OdooConnectFiscal.exe.config
+D:\GitHub\Marlon\Impresora-fiscal-panama-cchar\C#\OdooConectFiscal\OdooConnectFiscal\obj\Debug\OdooConnectFiscal.exe
+D:\GitHub\Marlon\Impresora-fiscal-panama-cchar\C#\OdooConectFiscal\OdooConnectFiscal\obj\Debug\OdooConnectFiscal.pdb
+D:\GitHub\Marlon\Impresora-fiscal-panama-cchar\C#\OdooConectFiscal\OdooConnectFiscal\bin\Debug\OdooConnectFiscal.exe
+D:\GitHub\Marlon\Impresora-fiscal-panama-cchar\C#\OdooConectFiscal\OdooConnectFiscal\bin\Debug\OdooConnectFiscal.pdb
+D:\GitHub\Marlon\Impresora-fiscal-panama-cchar\C#\OdooConectFiscal\OdooConnectFiscal\bin\Debug\Connect.dll
+D:\GitHub\Marlon\Impresora-fiscal-panama-cchar\C#\OdooConectFiscal\OdooConnectFiscal\bin\Debug\FiscalPrinter.dll
+D:\GitHub\Marlon\Impresora-fiscal-panama-cchar\C#\OdooConectFiscal\OdooConnectFiscal\bin\Debug\CookComputing.XmlRpcV2.dll
+D:\GitHub\Marlon\Impresora-fiscal-panama-cchar\C#\OdooConectFiscal\OdooConnectFiscal\bin\Debug\TFHKADIR.dll
+D:\GitHub\Marlon\Impresora-fiscal-panama-cchar\C#\OdooConectFiscal\OdooConnectFiscal\bin\Debug\Connect.pdb
+D:\GitHub\Marlon\Impresora-fiscal-panama-cchar\C#\OdooConectFiscal\OdooConnectFiscal\bin\Debug\FiscalPrinter.pdb
+D:\GitHub\Marlon\Impresora-fiscal-panama-cchar\C#\OdooConectFiscal\OdooConnectFiscal\bin\Debug\FiscalPrinter.xml
+D:\GitHub\Marlon\Impresora-fiscal-panama-cchar\C#\OdooConectFiscal\OdooConnectFiscal\obj\Debug\OdooConnectFiscal.csprojResolveAssemblyReference.cache
+D:\GitHub\Marlon\Impresora-fiscal-panama-cchar\C#\OdooConectFiscal\OdooConnectFiscal\obj\Debug\APP.Configuracion.resources
+D:\GitHub\Marlon\Impresora-fiscal-panama-cchar\C#\OdooConectFiscal\OdooConnectFiscal\obj\Debug\APP.Factura.resources
+D:\GitHub\Marlon\Impresora-fiscal-panama-cchar\C#\OdooConectFiscal\OdooConnectFiscal\obj\Debug\APP.Properties.Resources.resources
+D:\GitHub\Marlon\Impresora-fiscal-panama-cchar\C#\OdooConectFiscal\OdooConnectFiscal\obj\Debug\OdooConnectFiscal.csproj.GenerateResource.Cache
+D:\GitHub\Marlon\Impresora-fiscal-panama-cchar\C#\OdooConectFiscal\OdooConnectFiscal\bin\Debug\ITD.Log.dll
+D:\GitHub\Marlon\Impresora-fiscal-panama-cchar\C#\OdooConectFiscal\OdooConnectFiscal\bin\Debug\log4net.dll
+D:\VISUAL ESTUDIOS\Impresora-fiscal-panama-cchar-master\C#\OdooConectFiscal\OdooConnectFiscal\bin\Debug\OdooConnectFiscal.exe.config
+D:\VISUAL ESTUDIOS\Impresora-fiscal-panama-cchar-master\C#\OdooConectFiscal\OdooConnectFiscal\obj\Debug\OdooConnectFiscal.exe
+D:\VISUAL ESTUDIOS\Impresora-fiscal-panama-cchar-master\C#\OdooConectFiscal\OdooConnectFiscal\obj\Debug\OdooConnectFiscal.pdb
+D:\VISUAL ESTUDIOS\Impresora-fiscal-panama-cchar-master\C#\OdooConectFiscal\OdooConnectFiscal\obj\Debug\OdooConnectFiscal.csprojResolveAssemblyReference.cache
+D:\VISUAL ESTUDIOS\Impresora-fiscal-panama-cchar-master\C#\OdooConectFiscal\OdooConnectFiscal\obj\Debug\APP.Configuracion.resources
+D:\VISUAL ESTUDIOS\Impresora-fiscal-panama-cchar-master\C#\OdooConectFiscal\OdooConnectFiscal\obj\Debug\APP.Factura.resources
+D:\VISUAL ESTUDIOS\Impresora-fiscal-panama-cchar-master\C#\OdooConectFiscal\OdooConnectFiscal\obj\Debug\APP.Properties.Resources.resources
+D:\VISUAL ESTUDIOS\Impresora-fiscal-panama-cchar-master\C#\OdooConectFiscal\OdooConnectFiscal\obj\Debug\OdooConnectFiscal.csproj.GenerateResource.Cache
+D:\VISUAL ESTUDIOS\Impresora-fiscal-panama-cchar-master\C#\OdooConectFiscal\OdooConnectFiscal\bin\Debug\OdooConnectFiscal.exe
+D:\VISUAL ESTUDIOS\Impresora-fiscal-panama-cchar-master\C#\OdooConectFiscal\OdooConnectFiscal\bin\Debug\OdooConnectFiscal.pdb
+D:\VISUAL ESTUDIOS\Impresora-fiscal-panama-cchar-master\C#\OdooConectFiscal\OdooConnectFiscal\bin\Debug\Connect.dll
+D:\VISUAL ESTUDIOS\Impresora-fiscal-panama-cchar-master\C#\OdooConectFiscal\OdooConnectFiscal\bin\Debug\FiscalPrinter.dll
+D:\VISUAL ESTUDIOS\Impresora-fiscal-panama-cchar-master\C#\OdooConectFiscal\OdooConnectFiscal\bin\Debug\CookComputing.XmlRpcV2.dll
+D:\VISUAL ESTUDIOS\Impresora-fiscal-panama-cchar-master\C#\OdooConectFiscal\OdooConnectFiscal\bin\Debug\TFHKADIR.dll
+D:\VISUAL ESTUDIOS\Impresora-fiscal-panama-cchar-master\C#\OdooConectFiscal\OdooConnectFiscal\bin\Debug\Connect.pdb
+D:\VISUAL ESTUDIOS\Impresora-fiscal-panama-cchar-master\C#\OdooConectFiscal\OdooConnectFiscal\bin\Debug\FiscalPrinter.xml
+D:\VISUAL ESTUDIOS\Impresora-fiscal-panama-cchar-master\C#\OdooConectFiscal\OdooConnectFiscal\bin\Debug\FiscalPrinter.pdb
+C:\Users\Desarrollo-PC\AppData\Local\Temp\dsds\Impresora-fiscal-panama-cchar-master\C#\OdooConectFiscal\OdooConnectFiscal\bin\Debug\OdooConnectFiscal.exe.config
+C:\Users\Desarrollo-PC\AppData\Local\Temp\dsds\Impresora-fiscal-panama-cchar-master\C#\OdooConectFiscal\OdooConnectFiscal\bin\Debug\OdooConnectFiscal.exe
+C:\Users\Desarrollo-PC\AppData\Local\Temp\dsds\Impresora-fiscal-panama-cchar-master\C#\OdooConectFiscal\OdooConnectFiscal\bin\Debug\OdooConnectFiscal.pdb
+C:\Users\Desarrollo-PC\AppData\Local\Temp\dsds\Impresora-fiscal-panama-cchar-master\C#\OdooConectFiscal\OdooConnectFiscal\bin\Debug\Connect.dll
+C:\Users\Desarrollo-PC\AppData\Local\Temp\dsds\Impresora-fiscal-panama-cchar-master\C#\OdooConectFiscal\OdooConnectFiscal\bin\Debug\FiscalPrinter.dll
+C:\Users\Desarrollo-PC\AppData\Local\Temp\dsds\Impresora-fiscal-panama-cchar-master\C#\OdooConectFiscal\OdooConnectFiscal\bin\Debug\CookComputing.XmlRpcV2.dll
+C:\Users\Desarrollo-PC\AppData\Local\Temp\dsds\Impresora-fiscal-panama-cchar-master\C#\OdooConectFiscal\OdooConnectFiscal\bin\Debug\TFHKADIR.dll
+C:\Users\Desarrollo-PC\AppData\Local\Temp\dsds\Impresora-fiscal-panama-cchar-master\C#\OdooConectFiscal\OdooConnectFiscal\bin\Debug\Connect.pdb
+C:\Users\Desarrollo-PC\AppData\Local\Temp\dsds\Impresora-fiscal-panama-cchar-master\C#\OdooConectFiscal\OdooConnectFiscal\bin\Debug\FiscalPrinter.pdb
+C:\Users\Desarrollo-PC\AppData\Local\Temp\dsds\Impresora-fiscal-panama-cchar-master\C#\OdooConectFiscal\OdooConnectFiscal\bin\Debug\FiscalPrinter.xml
+C:\Users\Desarrollo-PC\AppData\Local\Temp\dsds\Impresora-fiscal-panama-cchar-master\C#\OdooConectFiscal\OdooConnectFiscal\obj\Debug\OdooConnectFiscal.csprojResolveAssemblyReference.cache
+C:\Users\Desarrollo-PC\AppData\Local\Temp\dsds\Impresora-fiscal-panama-cchar-master\C#\OdooConectFiscal\OdooConnectFiscal\obj\Debug\APP.Configuracion.resources
+C:\Users\Desarrollo-PC\AppData\Local\Temp\dsds\Impresora-fiscal-panama-cchar-master\C#\OdooConectFiscal\OdooConnectFiscal\obj\Debug\APP.Factura.resources
+C:\Users\Desarrollo-PC\AppData\Local\Temp\dsds\Impresora-fiscal-panama-cchar-master\C#\OdooConectFiscal\OdooConnectFiscal\obj\Debug\APP.Properties.Resources.resources
+C:\Users\Desarrollo-PC\AppData\Local\Temp\dsds\Impresora-fiscal-panama-cchar-master\C#\OdooConectFiscal\OdooConnectFiscal\obj\Debug\OdooConnectFiscal.csproj.GenerateResource.Cache
+C:\Users\Desarrollo-PC\AppData\Local\Temp\dsds\Impresora-fiscal-panama-cchar-master\C#\OdooConectFiscal\OdooConnectFiscal\obj\Debug\OdooConnectFiscal.csproj.CoreCompileInputs.cache
+C:\Users\Desarrollo-PC\AppData\Local\Temp\dsds\Impresora-fiscal-panama-cchar-master\C#\OdooConectFiscal\OdooConnectFiscal\obj\Debug\OdooConnectFiscal.exe
+C:\Users\Desarrollo-PC\AppData\Local\Temp\dsds\Impresora-fiscal-panama-cchar-master\C#\OdooConectFiscal\OdooConnectFiscal\obj\Debug\OdooConnectFiscal.pdb

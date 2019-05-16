@@ -1,0 +1,253 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_pa_hr_credits
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-08-01 04:51+0000\n"
+"PO-Revision-Date: 2017-07-31 23:52-0500\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: es_PA\n"
+"X-Generator: Poedit 1.8.7.1\n"
+
+#. module: l10n_pa_hr_credits
+#: model:ir.model.fields,field_description:l10n_pa_hr_credits.field_hr_credit_amount
+#: model:ir.model.fields,field_description:l10n_pa_hr_credits.field_hr_credit_line_amount
+msgid "Amount"
+msgstr "Importe"
+
+#. module: l10n_pa_hr_credits
+#: code:addons/l10n_pa_hr_credits/models/hr_credit.py:122
+#, python-format
+msgid "Amount Incorrect."
+msgstr "Importe Incorrecto."
+
+#. module: l10n_pa_hr_credits
+#: model:ir.model.fields,field_description:l10n_pa_hr_credits.field_hr_credit_amount_total
+msgid "Amount Total"
+msgstr "Importe Total"
+
+#. module: l10n_pa_hr_credits
+#: code:addons/l10n_pa_hr_credits/models/hr_credit.py:54
+#, python-format
+msgid "Amount is Zero."
+msgstr "Importe es Cero."
+
+#. module: l10n_pa_hr_credits
+#: selection:hr.credit,discount_type:0
+msgid "Biweekly"
+msgstr "Quincenal"
+
+#. module: l10n_pa_hr_credits
+#: model:ir.ui.view,arch_db:l10n_pa_hr_credits.hr_credit_form_view
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: l10n_pa_hr_credits
+#: selection:hr.credit,state:0
+msgid "Cancelled"
+msgstr "Cancelado"
+
+#. module: l10n_pa_hr_credits
+#: model:ir.actions.act_window,help:l10n_pa_hr_credits.hr_credit_list_action
+msgid "Create a HR Credit."
+msgstr "Crear Crédito Nominal."
+
+#. module: l10n_pa_hr_credits
+#: model:ir.model.fields,field_description:l10n_pa_hr_credits.field_hr_credit_create_uid
+#: model:ir.model.fields,field_description:l10n_pa_hr_credits.field_hr_credit_line_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: l10n_pa_hr_credits
+#: model:ir.model.fields,field_description:l10n_pa_hr_credits.field_hr_credit_create_date
+#: model:ir.model.fields,field_description:l10n_pa_hr_credits.field_hr_credit_line_create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: l10n_pa_hr_credits
+#: model:ir.model.fields,field_description:l10n_pa_hr_credits.field_hr_credit_name
+msgid "Credit Reference"
+msgstr "No. de Crédito"
+
+#. module: l10n_pa_hr_credits
+#: model:ir.model.fields,field_description:l10n_pa_hr_credits.field_hr_credit_date
+msgid "Date"
+msgstr "Fecha"
+
+#. module: l10n_pa_hr_credits
+#: model:ir.model.fields,field_description:l10n_pa_hr_credits.field_hr_credit_line_discount_date
+msgid "Discount Date"
+msgstr "Fecha Pago"
+
+#. module: l10n_pa_hr_credits
+#: model:ir.model.fields,field_description:l10n_pa_hr_credits.field_hr_credit_discount_type
+msgid "Discount Type"
+msgstr "Tipo Descuento"
+
+#. module: l10n_pa_hr_credits
+#: model:ir.model.fields,field_description:l10n_pa_hr_credits.field_hr_credit_display_name
+#: model:ir.model.fields,field_description:l10n_pa_hr_credits.field_hr_credit_line_display_name
+msgid "Display Name"
+msgstr "Nombre a mostrar"
+
+#. module: l10n_pa_hr_credits
+#: selection:hr.credit,state:0
+msgid "Done"
+msgstr "Completo"
+
+#. module: l10n_pa_hr_credits
+#: model:ir.ui.view,arch_db:l10n_pa_hr_credits.hr_credit_form_view
+msgid "Done Credit"
+msgstr "Completar"
+
+#. module: l10n_pa_hr_credits
+#: selection:hr.credit,state:0
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: l10n_pa_hr_credits
+#: model:ir.model.fields,field_description:l10n_pa_hr_credits.field_hr_credit_due_amount
+msgid "Due Amount"
+msgstr "Monto Pendiente"
+
+#. module: l10n_pa_hr_credits
+#: model:ir.model.fields,field_description:l10n_pa_hr_credits.field_hr_credit_dues
+msgid "Dues"
+msgstr "Cuotas"
+
+#. module: l10n_pa_hr_credits
+#: model:ir.model.fields,field_description:l10n_pa_hr_credits.field_hr_credit_employee_id
+#: model:ir.model.fields,field_description:l10n_pa_hr_credits.field_hr_credit_line_employee_id
+msgid "Employee"
+msgstr "Empleado"
+
+#. module: l10n_pa_hr_credits
+#: model:ir.model.fields,field_description:l10n_pa_hr_credits.field_hr_credit_inputs_id
+msgid "Entrada"
+msgstr "Entrada"
+
+#. module: l10n_pa_hr_credits
+#: model:ir.model.fields,field_description:l10n_pa_hr_credits.field_hr_credit_line_credit_id
+#: model:ir.ui.view,arch_db:l10n_pa_hr_credits.hr_credit_form_view
+#: model:ir.ui.view,arch_db:l10n_pa_hr_credits.view_hr_credit_tree
+msgid "HR Credit"
+msgstr "Crédito Nominal"
+
+#. module: l10n_pa_hr_credits
+#: model:ir.ui.view,arch_db:l10n_pa_hr_credits.hr_credit_form_view
+msgid "HR Credit Dues"
+msgstr "Cuota"
+
+#. module: l10n_pa_hr_credits
+#: model:ir.model.fields,field_description:l10n_pa_hr_credits.field_hr_credit_hr_credit_line_id
+#: model:ir.ui.view,arch_db:l10n_pa_hr_credits.hr_credit_form_view
+#: model:ir.ui.view,arch_db:l10n_pa_hr_credits.view_hr_credit_line_tree
+msgid "HR Credit Lines"
+msgstr "Lineas de Crédito Nominal"
+
+#. module: l10n_pa_hr_credits
+#: model:ir.ui.view,arch_db:l10n_pa_hr_credits.view_hr_credit_tree
+msgid "HR Credit Number"
+msgstr "Numero Crédito"
+
+#. module: l10n_pa_hr_credits
+#: model:ir.actions.act_window,name:l10n_pa_hr_credits.hr_credit_list_action
+#: model:ir.ui.menu,name:l10n_pa_hr_credits.hr_credit_menu
+#: model:ir.ui.view,arch_db:l10n_pa_hr_credits.view_hr_credit_calendar
+msgid "HR Credits"
+msgstr "Créditos Nominales"
+
+#. module: l10n_pa_hr_credits
+#: model:ir.model.fields,field_description:l10n_pa_hr_credits.field_hr_credit_id
+#: model:ir.model.fields,field_description:l10n_pa_hr_credits.field_hr_credit_line_id
+msgid "ID"
+msgstr "ID"
+
+#. module: l10n_pa_hr_credits
+#: model:ir.model.fields,field_description:l10n_pa_hr_credits.field_hr_credit_init_date
+msgid "Init Date"
+msgstr "Fecha inicial"
+
+#. module: l10n_pa_hr_credits
+#: model:ir.model.fields,field_description:l10n_pa_hr_credits.field_hr_credit_line_ispaid
+msgid "Is Paid"
+msgstr "Pagado"
+
+#. module: l10n_pa_hr_credits
+#: model:ir.model.fields,field_description:l10n_pa_hr_credits.field_hr_credit___last_update
+#: model:ir.model.fields,field_description:l10n_pa_hr_credits.field_hr_credit_line___last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: l10n_pa_hr_credits
+#: model:ir.model.fields,field_description:l10n_pa_hr_credits.field_hr_credit_line_write_uid
+#: model:ir.model.fields,field_description:l10n_pa_hr_credits.field_hr_credit_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: l10n_pa_hr_credits
+#: model:ir.model.fields,field_description:l10n_pa_hr_credits.field_hr_credit_line_write_date
+#: model:ir.model.fields,field_description:l10n_pa_hr_credits.field_hr_credit_write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: l10n_pa_hr_credits
+#: selection:hr.credit,discount_type:0
+msgid "Monthly"
+msgstr "Mensual"
+
+#. module: l10n_pa_hr_credits
+#: code:addons/l10n_pa_hr_credits/models/hr_credit.py:12
+#: code:addons/l10n_pa_hr_credits/models/hr_credit.py:125
+#: code:addons/l10n_pa_hr_credits/models/hr_credit.py:126
+#, python-format
+msgid "New"
+msgstr "Nuevo"
+
+#. module: l10n_pa_hr_credits
+#: model:ir.ui.view,arch_db:l10n_pa_hr_credits.hr_credit_form_view
+msgid "Note"
+msgstr "Nota"
+
+#. module: l10n_pa_hr_credits
+#: model:ir.model.fields,field_description:l10n_pa_hr_credits.field_hr_credit_description
+msgid "Notes"
+msgstr "Notas"
+
+#. module: l10n_pa_hr_credits
+#: model:ir.model.fields,field_description:l10n_pa_hr_credits.field_hr_credit_paid_amount
+msgid "Paid Amount"
+msgstr "Monto Pagado"
+
+#. module: l10n_pa_hr_credits
+#: model:ir.ui.view,arch_db:l10n_pa_hr_credits.hr_credit_form_view
+msgid "Set to Draft"
+msgstr "Cambiar a borrador"
+
+#. module: l10n_pa_hr_credits
+#: model:ir.model.fields,field_description:l10n_pa_hr_credits.field_hr_credit_state
+msgid "Status"
+msgstr "Estado"
+
+#. module: l10n_pa_hr_credits
+#: model:ir.model,name:l10n_pa_hr_credits.model_hr_credit
+msgid "hr.credit"
+msgstr "hr.credit"
+
+#. module: l10n_pa_hr_credits
+#: model:ir.model,name:l10n_pa_hr_credits.model_hr_credit_line
+msgid "hr.credit.line"
+msgstr "hr.credit.line"
+
+#. module: l10n_pa_hr_credits
+#: model:ir.model.fields,field_description:l10n_pa_hr_credits.field_hr_credit_line_sequence
+msgid "sequence"
+msgstr "Cuota"

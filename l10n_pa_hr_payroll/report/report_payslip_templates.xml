@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<template id="hr_payroll.report_payslip">
+    <t t-call="report.html_container">
+        <t t-foreach="docs" t-as="o">
+                <div class="page">
+
+                    <table class="table table-condensed table-bordered" style="font-size:9px;margin-bottom:0px !important;">
+                        <tr>
+                            <td colspan="5"><h5>Recibo de Pago - <span t-field="o.company_id"/></h5></td>
+                        </tr>
+                        <tr>
+                            <td style="width:50%" colspan="3" rowspan="2"><img t-if="o.company_id.logo" t-att-src="'data:image/png;base64,%s' % o.company_id.logo" style="max-height: 65px;"/></td>
+                            <td><strong>From</strong></td>
+                            <td><span t-esc="time.strftime('%d/%m/%Y',time.strptime(o.date_from,'%Y-%m-%d'))"/></td>
+                        </tr>
+                        <tr>
+                            <td><strong>To</strong></td>
+                             <td><span t-esc="time.strftime('%d/%m/%Y',time.strptime(o.date_to,'%Y-%m-%d'))"/></td>
+                        </tr>
+                        <tr>
+                            <td style="width:20%"><strong>Name</strong></td>
+                            <td colspan="4"><span t-field="o.employee_id"/></td>
+                        </tr>
+                        <tr>
+                            <td style="width:20%"><strong>Cedula</strong></td>
+                            <td colspan="4"><span t-field="o.employee_id.identification_id"/></td>
+                        </tr>
+                        <tr>
+                            <td style="width:20%"><strong>Mes de Pago</strong></td>
+                            <td colspan="4"><span t-esc="str.upper(time.strftime('%B',time.strptime(o.date_to,'%Y-%m-%d')))"/></td>
+                        </tr>
+                        <tr>
+                            <td style="width:20%"><strong>Quincena</strong></td>
+                            <td colspan="4">
+                                <span t-if="time.strftime('%d',time.strptime(o.date_to,'%Y-%m-%d')) == '15'">
+                                    PRIMERA
+                                </span>
+                                <span t-if="time.strftime('%d',time.strptime(o.date_to,'%Y-%m-%d')) != '15'">
+                                    SEGUNDA
+                                </span>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <table class="table table-condensed" style="font-size:9px;margin-bottom:0px !important;">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Percepciones</th>
+                                <th>Deducciones</th>
+                                <th>Neto a Pagar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="line">
+                                <td><span t-field="line.name"/></td>
+                                <td>
+                                    <span t-if="line.total > 0">
+                                        <span t-esc="line.total"
+                                          t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>
+                                    </span>
+                                </td>
+                                <td>
+                                    <span t-if="0 > line.total">
+                                        <span t-esc="-1 *line.total"
+                                          t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>
+                                    </span>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>TOTAL:</strong></td>
+                                <td>
+                                        <span t-esc="o.get_payroll_total()['perceptions']"
+                                          t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>
+                                </td>
+                                <td>
+                                        <span t-esc="o.get_payroll_total()['deductions']"
+                                          t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>
+                                </td>
+                                <td>
+                                        <span t-esc="o.get_payroll_total()['totals']"
+                                          t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p class="text-left"><strong>Authorized signature</strong></p>
+                    <br/>
+                    <table class="table table-condensed table-bordered" style="font-size:9px;margin-bottom:0px !important;">
+                        <tr>
+                            <td colspan="5"><h5>Recibo de Pago - <span t-field="o.company_id"/></h5></td>
+                        </tr>
+                        <tr>
+                            <td style="width:50%" colspan="3" rowspan="2"><img t-if="o.company_id.logo" t-att-src="'data:image/png;base64,%s' % o.company_id.logo" style="max-height: 65px;"/></td>
+                            <td><strong>From</strong></td>
+                            <td><span t-esc="time.strftime('%d/%m/%Y',time.strptime(o.date_from,'%Y-%m-%d'))"/></td>
+                        </tr>
+                        <tr>
+                            <td><strong>To</strong></td>
+                             <td><span t-esc="time.strftime('%d/%m/%Y',time.strptime(o.date_to,'%Y-%m-%d'))"/></td>
+                        </tr>
+                        <tr>
+                            <td style="width:20%"><strong>Name</strong></td>
+                            <td colspan="4"><span t-field="o.employee_id"/></td>
+                        </tr>
+                        <tr>
+                            <td style="width:20%"><strong>Cedula</strong></td>
+                            <td colspan="4"><span t-field="o.employee_id.identification_id"/></td>
+                        </tr>
+                        <tr>
+                            <td style="width:20%"><strong>Mes de Pago</strong></td>
+                            <td colspan="4"><span t-esc="str.upper(time.strftime('%B',time.strptime(o.date_to,'%Y-%m-%d')))"/></td>
+                        </tr>
+                        <tr>
+                            <td style="width:20%"><strong>Quincena</strong></td>
+                            <td colspan="4">
+                                <span t-if="time.strftime('%d',time.strptime(o.date_to,'%Y-%m-%d')) == '15'">
+                                    PRIMERA
+                                </span>
+                                <span t-if="time.strftime('%d',time.strptime(o.date_to,'%Y-%m-%d')) != '15'">
+                                    SEGUNDA
+                                </span>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <table class="table table-condensed" style="font-size:9px;margin-bottom:0px !important;">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Percepciones</th>
+                                <th>Deducciones</th>
+                                <th>Neto a Pagar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)" t-as="line">
+                                <td><span t-field="line.name"/></td>
+                                <td>
+                                    <span t-if="line.total > 0">
+                                        <span t-esc="line.total"
+                                          t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>
+                                    </span>
+                                </td>
+                                <td>
+                                    <span t-if="0 > line.total">
+                                        <span t-esc="-1 * line.total"
+                                          t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>
+                                    </span>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>TOTAL:</strong></td>
+                                <td>
+                                        <span t-esc="o.get_payroll_total()['perceptions']"
+                                          t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>
+                                </td>
+                                <td>
+                                        <span t-esc="o.get_payroll_total()['deductions']"
+                                          t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>
+                                </td>
+                                <td>
+                                        <span t-esc="o.get_payroll_total()['totals']"
+                                          t-esc-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p class="text-left"><strong>Authorized signature</strong></p>
+                </div>
+        </t>
+    </t>
+</template>
+</odoo>

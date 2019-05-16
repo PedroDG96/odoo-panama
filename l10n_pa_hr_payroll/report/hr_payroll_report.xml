@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <record id="l10n_pa_payroll_paperformat" model="report.paperformat">
+            <field name="name">Payroll Paperformat</field>
+            <field name="default" eval="False"/>
+            <field name="format">A4</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">10</field>
+            <field name="margin_bottom">10</field>
+            <field name="margin_left">10</field>
+            <field name="margin_right">10</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">10</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <report
+            id="hr_payroll.action_report_payslip"
+            model="hr.payslip"
+            string="Payslip"
+            report_type="qweb-pdf"
+            name="hr_payroll.report_payslip"
+            file="l10n_pa_hr_payroll.report_payslip"
+            paperformat="l10n_pa_hr_payroll.l10n_pa_payroll_paperformat"
+        />
+
+        <!--<report
+            id="action_report_payslip_panama"
+            model="hr.payslip"
+            string="Payslip Panama"
+            report_type="qweb-pdf"
+            name="l10n_pa_hr_payroll.report_payslip_panama"
+            file="l10n_pa_hr_payroll.report_payslip_panama"
+        />-->
+
+        <!--<record id="action_report_payslip_panama" model="ir.actions.report.xml">
+            <field name="paperformat_id" ref="l10n_pa_payroll_paperformat"/>
+        </record>-->
+</odoo>

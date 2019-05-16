@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_news,hr.news,model_hr_news,base.group_hr_manager,1,1,1,1
+access_hr_employee_news,hr.employee.news,model_hr_employee_news,base.group_hr_manager,1,1,1,1
+access_hr_salary_employee_month,hr.salary.employee.month,model_hr_salary_employee_month,base.group_hr_manager,1,1,1,1

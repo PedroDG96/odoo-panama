@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- CUSTOMER -->
+    <record id="ncnd_customer_invoice_form" model="ir.ui.view">
+        <field name="name">ncnd.customer.invoice.form</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form" />
+        <field name="arch" type="xml">
+            
+            <button name="%(account.action_account_invoice_refund)d" position="attributes">
+                <attribute name="string">Nota de Crédito</attribute>
+                <attribute name="icon">fa-file</attribute>
+            </button>
+            
+            <button name="%(account.action_account_invoice_payment)d" position="replace">
+                <button name="%(account.action_account_invoice_payment)d"
+                        icon="fa-file"
+                        type="action" 
+                        states="open" string="Registrar Pago" groups="account.group_account_invoice" 
+                        class="oe_highlight"/>
+            </button><!--attrs="{'invisible': ['|',('type', 'in', ['in_refund','out_refund'])]}"-->
+            
+            <xpath expr="//button[@name='%(account.action_account_invoice_refund)d']" position="after">
+                <button name="%(action_account_invoice_debit)d"
+                        type='action'
+                        string='Nota de Débito'
+                        attrs="{'invisible':['|',('refund_type','=','debit'),('state','in',['proforma2','proforma','cancel', 'draft'])]}" 
+                        icon='fa-file'/>
+            </xpath>
+
+            <xpath expr="//div[@groups='base.group_multi_currency']" position="after">
+                <field name="refund_invoice_id" readonly="1" string="Documento de referencia" attrs="{'invisible': ['|',('type','=','in_invoice'), ('type','=','out_invoice')]}"/>
+            </xpath>
+            
+            <page name="other_info" position="after">
+                <page string="Notas de Crédito y Débito" attrs="{'invisible':['|',('type','=','in_refund'),('type','=','out_refund')]}">
+                    <field name="refund_type" invisible="1"/>
+                    <field name="child_ids" readonly="1" nolabel="1" widget="many2many" domain="[('partner_id','=',partner_id),('id', '!=', active_id),('type','in',['out_invoice', 'out_refund'])]"/>
+                </page>
+            </page>
+
+        </field>
+    </record>
+    
+    <!-- SUPPLIER -->
+    <record id="ncnd_supplier_invoice_form" model="ir.ui.view">
+        <field name="name">ncnd.supplier.invoice.form</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_supplier_form" />
+        <field name="arch" type="xml">
+            
+            <button name="%(account.action_account_invoice_refund)d" position="attributes">
+                <attribute name="string">Nota de Crédito</attribute>
+                <attribute name="icon">fa-file</attribute>
+            </button>
+            
+            <button name="%(account.action_account_invoice_payment)d" position="replace">
+                <button name="%(account.action_account_invoice_payment)d" 
+                        type="action"
+                        icon='fa-file'
+                        states="open" string="Registrar Pago" groups="account.group_account_invoice" 
+                        class="oe_highlight"
+                />
+            </button><!--attrs="{'invisible': ['|',('type', 'in', ['in_refund','out_refund'])]}"-->
+
+            <xpath expr="//button[@name='%(account.action_account_invoice_refund)d']" position="after">
+                <button name="%(action_account_invoice_debit)d"
+                        type='action' string='Nota de Débito' states='open,paid' icon='fa-file-o'
+                        attrs="{'invisible':['|',('state','in',['proforma2','proforma','cancel', 'draft']),('refund_type','=','debit')]}"
+                        help="A debit note from accounting and fiscal point of view is exactly as an invoice but with a parent invoice related, this module create an invoice automatically with this invoice as parent, remember Debit note will increase the payable and receivable exactly as an invoice." 
+                    />
+            </xpath>
+            <xpath expr="//field[@name='company_currency_id']" position="after">
+                <field name="refund_invoice_id" readonly="1" string="Documento de referencia" attrs="{'invisible': ['|',('type','=','in_invoice'), ('type','=','out_invoice')]}"/>
+            </xpath>
+            <notebook position="inside">
+                <page string="Notas de Débito y Crédito" attrs="{'invisible':['|',('type','=','out_refund'),('type','=','in_refund')]}">
+                    <field name="refund_type" invisible="1"/>
+                    <field name="child_ids" nolabel="1" widget="many2many" domain="[('partner_id','=',partner_id),('id', '!=', active_id),('type','in',['in_invoice', 'in_refund'])]"/>
+                </page>
+            </notebook>
+        </field>
+    </record>
+
+
+    <record id="account.action_invoice_tree1" model="ir.actions.act_window">
+        <field name="name">Fc clien</field>
+    </record>
+<!--    <record id="account.action_invoice_tree2" model="ir.actions.act_window">
+        <field name="domain">[('type','=','in_invoice')]</field>
+    </record>
+-->
+    
+    <!-- Menu y vista nuevo para NC-ND Clientes -->
+    <record id="action_invoice_tree3" model="ir.actions.act_window">
+        <field name="name">Notas de Débito y Crédito</field>
+        <field name="res_model">account.invoice</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,kanban,form,calendar,pivot,graph</field>
+        <field eval="False" name="view_id"/>
+        <field name="domain">[('type','=','out_refund')]</field>
+        <field name="context">{'type':'out_refund', 'journal_type': 'sale','create': False}</field>
+        <field name="search_view_id" ref="account.view_account_invoice_filter"/>
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+            Click to create a customer invoice.
+          </p><p>
+            Odoo's electronic invoicing allows to ease and fasten the
+            collection of customer payments. Your customer receives the
+            invoice by email and he can pay online and/or import it
+            in his own system.
+          </p><p>
+            The discussions with your customer are automatically displayed at
+            the bottom of each invoice.
+          </p>
+        </field>
+    </record>
+
+    <record id="action_invoice_tree3_view1" model="ir.actions.act_window.view">
+        <field eval="1" name="sequence"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="account.invoice_tree"/>
+        <field name="act_window_id" ref="action_invoice_tree3"/>
+    </record>
+
+    <record id="action_invoice_tree3_view2" model="ir.actions.act_window.view">
+        <field eval="2" name="sequence"/>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="account.invoice_form"/>
+        <field name="act_window_id" ref="action_invoice_tree3"/>
+    </record>
+
+    <menuitem action="action_invoice_tree3" id="menu_action_invoice_tree3" parent="account.menu_finance_receivables" sequence="3"/>
+   
+   
+    <!-- Menu y vista nuevo para SOLO facturas de Clientes -->
+    <record id="action_invoice_tree5" model="ir.actions.act_window">
+        <field name="name">Solo Facturas</field>
+        <field name="res_model">account.invoice</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,kanban,form,calendar,pivot,graph</field>
+        <field eval="False" name="view_id"/>
+        <field name="domain">[('type','=','out_invoice')]</field>
+        <field name="context">{'type':'out_invoice', 'journal_type': 'sale'}</field>
+        <field name="search_view_id" ref="account.view_account_invoice_filter"/>
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+            Click to create a customer invoice.
+          </p><p>
+            Odoo's electronic invoicing allows to ease and fasten the
+            collection of customer payments. Your customer receives the
+            invoice by email and he can pay online and/or import it
+            in his own system.
+          </p><p>
+            The discussions with your customer are automatically displayed at
+            the bottom of each invoice.
+          </p>
+        </field>
+    </record>
+
+    <record id="action_invoice_tree5_view1" model="ir.actions.act_window.view">
+        <field eval="1" name="sequence"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="account.invoice_tree"/>
+        <field name="act_window_id" ref="action_invoice_tree5"/>
+    </record>
+
+    <record id="action_invoice_tree5_view2" model="ir.actions.act_window.view">
+        <field eval="2" name="sequence"/>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="account.invoice_form"/>
+        <field name="act_window_id" ref="action_invoice_tree5"/>
+    </record>
+
+    <menuitem action="action_invoice_tree5" id="menu_action_invoice_tree5" parent="account.menu_finance_receivables" sequence="2"/>
+
+    <!-- Menu y vista nuevo para NC-ND Proveedores -->
+    <record id="action_invoice_tree4" model="ir.actions.act_window">
+        <field name="name">Notas de Débito y Crédito</field>
+        <field name="res_model">account.invoice</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,kanban,form,calendar,pivot,graph</field>
+        <field eval="False" name="view_id"/>
+        <field name="domain">[('type','=','in_refund')]</field>
+        <field name="context">{'default_type': 'in_refund', 'journal_type': 'purchase','create': False}</field>
+        <field name="search_view_id" ref="account.view_account_invoice_filter"/>
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+            Click to record a new vendor bill.
+          </p><p>
+            You can control the invoice from your vendor according to
+            what you purchased or received.
+          </p>
+        </field>
+    </record>
+
+    <record id="action_invoice_supplier_tree4_view1" model="ir.actions.act_window.view">
+        <field eval="1" name="sequence"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="account.invoice_supplier_tree"/>
+        <field name="act_window_id" ref="action_invoice_tree4"/>
+    </record>
+
+    <record id="action_invoice__supplier_tree4_view2" model="ir.actions.act_window.view">
+        <field eval="2" name="sequence"/>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="account.invoice_supplier_form"/>
+        <field name="act_window_id" ref="action_invoice_tree4"/>
+    </record>
+
+    <menuitem action="action_invoice_tree4" id="menu_action_invoice_tree4" parent="account.menu_finance_payables" sequence="3"/>
+
+    <!-- Menu y vista nuevo para SOLO Factura Proveedores -->
+    <record id="action_invoice_tree6" model="ir.actions.act_window">
+        <field name="name">Solo Facturas</field>
+        <field name="res_model">account.invoice</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,kanban,form,calendar,pivot,graph</field>
+        <field eval="False" name="view_id"/>
+        <field name="domain">[('type','=','in_invoice')]</field>
+        <field name="context">{'default_type': 'in_invoice', 'type': 'in_invoice', 'journal_type': 'purchase'}</field>
+        <field name="search_view_id" ref="account.view_account_invoice_filter"/>
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+            Click to record a new vendor bill.
+          </p><p>
+            You can control the invoice from your vendor according to
+            what you purchased or received.
+          </p>
+        </field>
+    </record>
+
+    <record id="action_invoice_supplier_tree6_view1" model="ir.actions.act_window.view">
+        <field eval="1" name="sequence"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="account.invoice_supplier_tree"/>
+        <field name="act_window_id" ref="action_invoice_tree6"/>
+    </record>
+
+    <record id="action_invoice__supplier_tree6_view2" model="ir.actions.act_window.view">
+        <field eval="2" name="sequence"/>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="account.invoice_supplier_form"/>
+        <field name="act_window_id" ref="action_invoice_tree6"/>
+    </record>
+
+    <menuitem action="action_invoice_tree6" id="menu_action_invoice_tree6" parent="account.menu_finance_payables" sequence="2"/>
+
+</odoo>

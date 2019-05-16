@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="base_view_company_inherit_form">
+        <field name="name">base.view.company.inherit.form</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="model">res.company</field>
+        <field name="arch" type="xml">
+           <field name="partner_id" position="before" >
+                <field name="ruc" required="1"/>
+                <field name="act_economica" />
+            </field>
+        </field>
+    </record>
+</odoo>

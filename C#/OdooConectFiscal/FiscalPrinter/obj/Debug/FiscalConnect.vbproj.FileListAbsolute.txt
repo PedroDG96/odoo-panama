@@ -1,0 +1,40 @@
+D:\GitHub\Marlon\carlos-repo\C#\OdooConectFiscal\FiscalPrinter\bin\Debug\FiscalPrinter.dll
+D:\GitHub\Marlon\carlos-repo\C#\OdooConectFiscal\FiscalPrinter\bin\Debug\FiscalPrinter.pdb
+D:\GitHub\Marlon\carlos-repo\C#\OdooConectFiscal\FiscalPrinter\bin\Debug\FiscalPrinter.xml
+D:\GitHub\Marlon\carlos-repo\C#\OdooConectFiscal\FiscalPrinter\bin\Debug\TFHKADIR.dll
+D:\GitHub\Marlon\carlos-repo\C#\OdooConectFiscal\FiscalPrinter\obj\Debug\FiscalPrinter.Resources.resources
+D:\GitHub\Marlon\carlos-repo\C#\OdooConectFiscal\FiscalPrinter\obj\Debug\FiscalConnect.vbproj.GenerateResource.Cache
+D:\GitHub\Marlon\carlos-repo\C#\OdooConectFiscal\FiscalPrinter\obj\Debug\FiscalPrinter.dll
+D:\GitHub\Marlon\carlos-repo\C#\OdooConectFiscal\FiscalPrinter\obj\Debug\FiscalPrinter.xml
+D:\GitHub\Marlon\carlos-repo\C#\OdooConectFiscal\FiscalPrinter\obj\Debug\FiscalPrinter.pdb
+D:\GitHub\Marlon\Impresora-fiscal-panama-cchar\C#\OdooConectFiscal\FiscalPrinter\bin\Debug\FiscalPrinter.dll
+D:\GitHub\Marlon\Impresora-fiscal-panama-cchar\C#\OdooConectFiscal\FiscalPrinter\bin\Debug\FiscalPrinter.pdb
+D:\GitHub\Marlon\Impresora-fiscal-panama-cchar\C#\OdooConectFiscal\FiscalPrinter\bin\Debug\FiscalPrinter.xml
+D:\GitHub\Marlon\Impresora-fiscal-panama-cchar\C#\OdooConectFiscal\FiscalPrinter\bin\Debug\TFHKADIR.dll
+D:\GitHub\Marlon\Impresora-fiscal-panama-cchar\C#\OdooConectFiscal\FiscalPrinter\obj\Debug\FiscalPrinter.Resources.resources
+D:\GitHub\Marlon\Impresora-fiscal-panama-cchar\C#\OdooConectFiscal\FiscalPrinter\obj\Debug\FiscalConnect.vbproj.GenerateResource.Cache
+D:\GitHub\Marlon\Impresora-fiscal-panama-cchar\C#\OdooConectFiscal\FiscalPrinter\obj\Debug\FiscalPrinter.dll
+D:\GitHub\Marlon\Impresora-fiscal-panama-cchar\C#\OdooConectFiscal\FiscalPrinter\obj\Debug\FiscalPrinter.xml
+D:\GitHub\Marlon\Impresora-fiscal-panama-cchar\C#\OdooConectFiscal\FiscalPrinter\obj\Debug\FiscalPrinter.pdb
+D:\GitHub\Marlon\Impresora-fiscal-panama-cchar\C#\OdooConectFiscal\FiscalPrinter\bin\Debug\ITD.Log.dll
+D:\GitHub\Marlon\Impresora-fiscal-panama-cchar\C#\OdooConectFiscal\FiscalPrinter\bin\Debug\log4net.dll
+D:\VISUAL ESTUDIOS\Impresora-fiscal-panama-cchar-master\C#\OdooConectFiscal\FiscalPrinter\obj\Debug\FiscalConnect.vbprojResolveAssemblyReference.cache
+D:\VISUAL ESTUDIOS\Impresora-fiscal-panama-cchar-master\C#\OdooConectFiscal\FiscalPrinter\obj\Debug\FiscalPrinter.Resources.resources
+D:\VISUAL ESTUDIOS\Impresora-fiscal-panama-cchar-master\C#\OdooConectFiscal\FiscalPrinter\obj\Debug\FiscalConnect.vbproj.GenerateResource.Cache
+D:\VISUAL ESTUDIOS\Impresora-fiscal-panama-cchar-master\C#\OdooConectFiscal\FiscalPrinter\obj\Debug\FiscalPrinter.dll
+D:\VISUAL ESTUDIOS\Impresora-fiscal-panama-cchar-master\C#\OdooConectFiscal\FiscalPrinter\obj\Debug\FiscalPrinter.xml
+D:\VISUAL ESTUDIOS\Impresora-fiscal-panama-cchar-master\C#\OdooConectFiscal\FiscalPrinter\bin\Debug\FiscalPrinter.dll
+D:\VISUAL ESTUDIOS\Impresora-fiscal-panama-cchar-master\C#\OdooConectFiscal\FiscalPrinter\bin\Debug\FiscalPrinter.pdb
+D:\VISUAL ESTUDIOS\Impresora-fiscal-panama-cchar-master\C#\OdooConectFiscal\FiscalPrinter\bin\Debug\FiscalPrinter.xml
+D:\VISUAL ESTUDIOS\Impresora-fiscal-panama-cchar-master\C#\OdooConectFiscal\FiscalPrinter\bin\Debug\TFHKADIR.dll
+D:\VISUAL ESTUDIOS\Impresora-fiscal-panama-cchar-master\C#\OdooConectFiscal\FiscalPrinter\obj\Debug\FiscalPrinter.pdb
+C:\Users\Desarrollo-PC\AppData\Local\Temp\dsds\Impresora-fiscal-panama-cchar-master\C#\OdooConectFiscal\FiscalPrinter\bin\Debug\FiscalPrinter.dll
+C:\Users\Desarrollo-PC\AppData\Local\Temp\dsds\Impresora-fiscal-panama-cchar-master\C#\OdooConectFiscal\FiscalPrinter\bin\Debug\FiscalPrinter.pdb
+C:\Users\Desarrollo-PC\AppData\Local\Temp\dsds\Impresora-fiscal-panama-cchar-master\C#\OdooConectFiscal\FiscalPrinter\bin\Debug\FiscalPrinter.xml
+C:\Users\Desarrollo-PC\AppData\Local\Temp\dsds\Impresora-fiscal-panama-cchar-master\C#\OdooConectFiscal\FiscalPrinter\bin\Debug\TFHKADIR.dll
+C:\Users\Desarrollo-PC\AppData\Local\Temp\dsds\Impresora-fiscal-panama-cchar-master\C#\OdooConectFiscal\FiscalPrinter\obj\Debug\FiscalPrinter.Resources.resources
+C:\Users\Desarrollo-PC\AppData\Local\Temp\dsds\Impresora-fiscal-panama-cchar-master\C#\OdooConectFiscal\FiscalPrinter\obj\Debug\FiscalConnect.vbproj.GenerateResource.Cache
+C:\Users\Desarrollo-PC\AppData\Local\Temp\dsds\Impresora-fiscal-panama-cchar-master\C#\OdooConectFiscal\FiscalPrinter\obj\Debug\FiscalConnect.vbproj.CoreCompileInputs.cache
+C:\Users\Desarrollo-PC\AppData\Local\Temp\dsds\Impresora-fiscal-panama-cchar-master\C#\OdooConectFiscal\FiscalPrinter\obj\Debug\FiscalPrinter.dll
+C:\Users\Desarrollo-PC\AppData\Local\Temp\dsds\Impresora-fiscal-panama-cchar-master\C#\OdooConectFiscal\FiscalPrinter\obj\Debug\FiscalPrinter.xml
+C:\Users\Desarrollo-PC\AppData\Local\Temp\dsds\Impresora-fiscal-panama-cchar-master\C#\OdooConectFiscal\FiscalPrinter\obj\Debug\FiscalPrinter.pdb

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+    <template id="report_hrsalarybymonth">
+        <t t-call="report.html_container">
+        <t t-call="report.internal_layout">
+            <div class="page">
+                <div class="text-center">
+	                <h2>Libro de Remuneraciones</h2>
+	                <p>
+	                    Desde <u><span t-esc="formatLang(data['form']['first_date'], date=True)"/></u> Hasta <u><span t-esc="formatLang(data['form']['end_date'], date=True)"/></u>
+	                </p>
+                </div>
+                <table class="table table-condensed table-bordered text-center">
+                    <thead>
+                        <tr>
+                            <th rowspan="3">Nombre del Empleado</th>
+                            <th colspan="4">Salario del Mes</th>
+                            <th colspan="5">Otros Ingresos</th>
+                            <th rowspan="3">Total Ingresos</th>
+                            <th colspan="9">Descuentos</th>
+                            <th rowspan="3">Total Egresos</th>
+                            <th rowspan="3">Aportes Empresa</th>
+                            <th rowspan="3">Total a Pagar</th>
+                        </tr>
+                        <tr>
+                            <th rowspan="2">Salario Mes</th>
+                            <th rowspan="2">Salario Dia</th>
+                            <th rowspan="2">Dias Trab.</th>
+                            <th rowspan="2">SubTotal</th>
+                            <th rowspan="2">Bonos</th>
+                            <th rowspan="2">Viatico</th>
+                            <th rowspan="2">Horas Extras</th>
+                            <th rowspan="2">Decimo</th>
+                            <th rowspan="2">SubTotal</th>
+                            <th rowspan="2">Seguro Social</th>
+                            <th rowspan="2">Seguro Educ.</th>
+                            <th rowspan="2">ISLR</th>
+                            <th colspan="3">Creditos Bancarios</th>
+                            <th rowspan="2">Desc. Celular</th>
+                            <th rowspan="2">Prest. ISLR</th>
+                            <th rowspan="2">Prest. y Desc.</th>
+                        </tr>
+                        <tr>
+                            <th>Banc</th>
+                            <th>C.A./BANI</th>
+                            <th>Cred. Corp.</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="get_employee(data['form'])" t-as="e">
+                            <tr>
+                                <td align="left"><span t-esc="e[2]"/></td>
+                                <td align="left"><span t-esc="e[3]"/></td>
+                                <td align="left"><span t-esc="round(e[5]/e[4],2)"/></td>
+                                <td align="left"><span t-esc="e[4]"/></td>
+                                <td align="left"><span t-esc="e[5]"/></td>
+                                <td align="left"><span t-esc="e[6]"/></td>
+                                <td align="left"><span t-esc="e[7]"/></td>
+                                <td align="left"><span t-esc="e[8]"/></td>
+                                <td align="left"><span t-esc="e[9]"/></td>
+                                <td align="left"><span t-esc="e[10]"/></td>
+                                <td align="left"><span t-esc="e[11]"/></td>
+                                <td align="left"><span t-esc="abs(e[12])"/></td>
+                                <td align="left"><span t-esc="abs(e[13])"/></td>
+                                <td align="left"><span t-esc="abs(e[14])"/></td>
+                                <td align="left"><span t-esc="abs(e[15])"/></td>
+                                <td align="left"><span t-esc="abs(e[16])"/></td>
+                                <td align="left"><span t-esc="abs(e[17])"/></td>
+                                <td align="left"><span t-esc="abs(e[18])"/></td>
+                                <td align="left"><span t-esc="abs(e[19])"/></td>
+                                <td align="left"><span t-esc="abs(e[20])"/></td>
+                                <td align="left"><span t-esc="abs(e[21])"/></td>
+                                <td align="left"><span t-esc="e[22]"/></td>
+                                <td align="left"><span t-esc="e[23]"/></td>
+                            </tr>
+                        </t>
+                    </tbody>
+                    <tfoot>
+                        <tr class="border-black">
+                            <td><strong>Total</strong></td>
+                            <td align="left"><span t-esc="get_total_wage(data['form']['first_date'],data['form']['end_date'])"/></td>
+                            <td align="left"><span t-esc="get_total_salary_daily(data['form']['first_date'],data['form']['end_date'])"/></td>
+                            <td align="left"></td>
+                            <td align="left"><span t-esc="get_total_salary('SUELDO',data['form']['first_date'],data['form']['end_date'])"/></td>
+                            <td align="left"><span t-esc="get_total_salary('BONO',data['form']['first_date'],data['form']['end_date'])"/></td>
+                            <td align="left"><span t-esc="get_total_salary('VIATICO',data['form']['first_date'],data['form']['end_date'])"/></td>
+                            <td align="left"><span t-esc="get_total_salary('HOREXT',data['form']['first_date'],data['form']['end_date'])"/></td>
+                            <td align="left"><span t-esc="get_total_salary('DECIMO',data['form']['first_date'],data['form']['end_date'])"/></td>
+                            <td align="left"><span t-esc="get_total_salary('TOTOTRING',data['form']['first_date'],data['form']['end_date'])"/></td>
+                            <td align="left"><span t-esc="get_total_salary('TOTING',data['form']['first_date'],data['form']['end_date'])"/></td>
+                            <td align="left"><span t-esc="abs(get_total_salary('SEGSOC',data['form']['first_date'],data['form']['end_date']))"/></td>
+                            <td align="left"><span t-esc="abs(get_total_salary('SEGEDU',data['form']['first_date'],data['form']['end_date']))"/></td>
+                            <td align="left"><span t-esc="abs(get_total_salary('ISLR',data['form']['first_date'],data['form']['end_date']))"/></td>
+                            <td align="left"><span t-esc="abs(get_total_salary('BAC',data['form']['first_date'],data['form']['end_date']))"/></td>
+                            <td align="left"><span t-esc="abs(get_total_salary('CABANI',data['form']['first_date'],data['form']['end_date']))"/></td>
+                            <td align="left"><span t-esc="abs(get_total_salary('CREDCORP',data['form']['first_date'],data['form']['end_date']))"/></td>
+                            <td align="left"><span t-esc="abs(get_total_salary('DESCCEL',data['form']['first_date'],data['form']['end_date']))"/></td>
+                            <td align="left"><span t-esc="abs(get_total_salary('PRESTISLR',data['form']['first_date'],data['form']['end_date']))"/></td>
+                            <td align="left"><span t-esc="abs(get_total_salary('PRESTDESC',data['form']['first_date'],data['form']['end_date']))"/></td>
+                            <td align="left"><span t-esc="abs(get_total_salary('TOTDESC',data['form']['first_date'],data['form']['end_date']))"/></td>
+                            <td align="left"><span t-esc="get_total_salary('APTEMP',data['form']['first_date'],data['form']['end_date'])"/></td>
+                            <td align="left"><span t-esc="get_total_salary('TOTPAGO',data['form']['first_date'],data['form']['end_date'])"/></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </t>
+        </t>
+    </template>
+</data>
+</odoo>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+     <record id="l10n_pa_base_invoice1_form" model="ir.ui.view">
+            <field name="name">l10n.pa.base.invoice1.form</field>
+           <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form" />
+            <field name="arch" type="xml">
+
+            <field name="partner_id" position="before">
+                <field name="numero_comprobante" readonly="1"/>
+            </field>
+
+            <page name="other_info" position="after" >
+                   <page name="printer_fiscal" string="Impresión Fiscal">
+                     <field name="printer_list_ids"  readonly="1">
+                       <tree string="Cargas" editable="bottom">
+                            <field name="id_fiscal" />
+                            <field name="serial_equipo_fiscal" />
+                            <field name="reimpresion" />
+                            <field name="numero_comprobante" />
+                            <field name="print_date" />
+                           <field name="print_user" />
+                       </tree>
+                     </field>
+                    </page>
+                </page>
+             </field>
+        </record>
+
+
+        <record id="l10n_pa_fiscal_invoice_supplier_tree" model="ir.ui.view">
+        <field name="name">l10n.pa.fiscal.invoice.supplier.tree</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_tree"/>
+        <field name="arch" type="xml">
+            <field name="state" position="before">
+                <field name="numero_comprobante"/>
+            </field>
+        </field>
+    </record>
+
+
+    </data>
+</odoo>

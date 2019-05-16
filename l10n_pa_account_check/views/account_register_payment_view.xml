@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Vistas Referencia de (check printing module) -->
+    <record id="view_account_register_payment_form_inh" model="ir.ui.view">
+        <field name="name">account.register.payments.form.inherited</field>
+        <field name="model">account.register.payments</field>
+        <field name="inherit_id" ref="account.view_account_payment_from_invoices" />
+        <field name="arch" type="xml">
+            <field name="amount" position="after">
+                <field name="check_amount_in_words" attrs="{'invisible': [('payment_method_code', 'not in', ['issue_check','check_printing'])]}"/>
+                <field name="payment_method_code"/>
+            </field>
+            <field name="communication" position="after">
+                <field name="check_number" attrs="{'invisible': ['|', ('payment_method_code', 'not in', ['issue_check','check_printing']), ('check_number', '=', 0)]}"/>
+                <field name="check_type" invisible="1"/>
+                <field name="check_subtype" invisible="1"/>
+                <field name="checkbook_block_manual_number" invisible="1"/>
+            </field>
+            <xpath expr="//group" position="inside">
+                 <group name="checks">
+                        <field name="check_id" attrs="{'invisible': [('check_id', '=', False)]}"/>
+                        <field name="check_ids_copy" attrs="{'invisible': ['|',  '|', ('check_ids_copy', '=', []), ('check_id', '!=', False), ('payment_method_code', 'not in', ['received_third_check', 'issue_check'])]}">
+                            <tree edit="false" create="false">
+                                <field name="name"/>
+                                <field name="payment_date"/>
+                                <field name="amount" sum="Total"/>
+                            </tree>
+                        </field>
+                        <field name="check_ids"
+                            options="{'no_create': True}"
+                            domain="[('journal_id', '=', journal_id), ('type', '=', 'third_check')]"
+                            attrs="{'invisible': ['|', ('payment_method_code', '!=', 'delivered_third_check'), ('payment_type', 'not in', ['transfer', 'outbound'])], 'required': [('payment_method_code', '=', 'delivered_third_check'), ('payment_type', 'in', ['transfer', 'outbound'])]}">
+                            <tree edit="false">
+                                <field name="name"/>
+                                <field name="payment_date"/>
+                                <field name="amount" sum="Total"/>
+                            </tree>
+                        </field>
+                    </group>
+                    <group name="check_data">
+                        <newline/>
+                        <field name="checkbook_id" options="{'no_create': True, 'no_open': True}" attrs="{'invisible': [('payment_method_code', 'not in', ['issue_check'])], 'required': [('payment_method_code', 'in', ['issue_check'])]}" domain="[('journal_id', '=', journal_id)]"/>
+                        <field name="check_number_readonly" attrs="{'invisible': [('checkbook_block_manual_number', '!=', True)]}"/>
+                        <field name="check_number" attrs="{'invisible': ['|', ('checkbook_block_manual_number', '=', True), ('payment_method_code', 'not in', ['received_third_check', 'issue_check'])], 'required': [('payment_method_code', 'in', ['received_third_check', 'issue_check'])]}"/>
+                        <field name="check_name" attrs="{'invisible': ['|', ('checkbook_block_manual_number', '=', True), ('payment_method_code', 'not in', ['received_third_check', 'issue_check'])], 'required': [('payment_method_code', 'in', ['received_third_check', 'issue_check'])]}"/>
+                        <field name="check_issue_date" attrs="{'invisible': [('payment_method_code', 'not in', ['received_third_check', 'issue_check'])], 'required': [('payment_method_code', 'in', ['received_third_check', 'issue_check'])]}"/>
+                        <field name="check_payment_date" attrs="{'invisible': [('payment_method_code', 'not in', ['received_third_check', 'issue_check'])], 'required': [('check_subtype', '=', 'deferred')]}"/>
+                        <field name="check_bank_id" attrs="{'invisible': [('payment_method_code', 'not in', ['received_third_check'])],  'required': [('payment_method_code', 'in', ['received_third_check'])], 'required': [('payment_method_code', 'in', ['received_third_check'])]}"/>
+                        <field name="check_owner_vat" attrs="{'invisible': [('payment_method_code', 'not in', ['received_third_check'])],  'required': [('payment_method_code', 'in', ['received_third_check'])]}"/>
+                        <field name="check_owner_name" attrs="{'invisible': [('payment_method_code', 'not in', ['received_third_check'])],  'required': [('payment_method_code', 'in', ['received_third_check'])]}"/>
+                    </group>
+                    <group>
+                        <label for="readonly_amount" attrs="{'invisible': [('payment_method_code', '!=', 'delivered_third_check')]}"/>
+                        <div name="readonly_amount_div" class="o_row" attrs="{'invisible': [('payment_method_code', '!=', 'delivered_third_check')]}">
+                            <field name="readonly_amount"/>
+                            <field name="readonly_currency_id" groups="base.group_multi_currency"/>
+                        </div>
+                    </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,17 @@
+D:\GitHub\Marlon\carlos-repo\C#\OdooConectFiscal\OdooConnectFiscal\bin\Release\OdooConnectFiscal.exe.config
+D:\GitHub\Marlon\carlos-repo\C#\OdooConectFiscal\OdooConnectFiscal\bin\Release\OdooConnectFiscal.exe
+D:\GitHub\Marlon\carlos-repo\C#\OdooConectFiscal\OdooConnectFiscal\bin\Release\OdooConnectFiscal.pdb
+D:\GitHub\Marlon\carlos-repo\C#\OdooConectFiscal\OdooConnectFiscal\bin\Release\Connect.dll
+D:\GitHub\Marlon\carlos-repo\C#\OdooConectFiscal\OdooConnectFiscal\bin\Release\FiscalPrinter.dll
+D:\GitHub\Marlon\carlos-repo\C#\OdooConectFiscal\OdooConnectFiscal\bin\Release\CookComputing.XmlRpcV2.dll
+D:\GitHub\Marlon\carlos-repo\C#\OdooConectFiscal\OdooConnectFiscal\bin\Release\TFHKADIR.dll
+D:\GitHub\Marlon\carlos-repo\C#\OdooConectFiscal\OdooConnectFiscal\bin\Release\Connect.pdb
+D:\GitHub\Marlon\carlos-repo\C#\OdooConectFiscal\OdooConnectFiscal\bin\Release\FiscalPrinter.pdb
+D:\GitHub\Marlon\carlos-repo\C#\OdooConectFiscal\OdooConnectFiscal\bin\Release\FiscalPrinter.xml
+D:\GitHub\Marlon\carlos-repo\C#\OdooConectFiscal\OdooConnectFiscal\obj\Release\OdooConnectFiscal.csprojResolveAssemblyReference.cache
+D:\GitHub\Marlon\carlos-repo\C#\OdooConectFiscal\OdooConnectFiscal\obj\Release\APP.Configuracion.resources
+D:\GitHub\Marlon\carlos-repo\C#\OdooConectFiscal\OdooConnectFiscal\obj\Release\APP.Factura.resources
+D:\GitHub\Marlon\carlos-repo\C#\OdooConectFiscal\OdooConnectFiscal\obj\Release\APP.Properties.Resources.resources
+D:\GitHub\Marlon\carlos-repo\C#\OdooConectFiscal\OdooConnectFiscal\obj\Release\OdooConnectFiscal.csproj.GenerateResource.Cache
+D:\GitHub\Marlon\carlos-repo\C#\OdooConectFiscal\OdooConnectFiscal\obj\Release\OdooConnectFiscal.exe
+D:\GitHub\Marlon\carlos-repo\C#\OdooConectFiscal\OdooConnectFiscal\obj\Release\OdooConnectFiscal.pdb

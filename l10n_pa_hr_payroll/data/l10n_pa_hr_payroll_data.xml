@@ -1,0 +1,629 @@
+<?xml version="1.0" encoding="utf-8"?>						
+<odoo>
+    <data>
+        <!-- Rule Category -->
+        <record id="ING" model="hr.salary.rule.category">
+            <field name="name">INGRESOS</field>
+            <field name="code">ING</field>
+        </record>						
+						
+        <record id="OTING" model="hr.salary.rule.category">
+            <field name="name">OTROS INGRESOS</field>
+            <field name="code">OTING</field>
+        </record>
+
+        <record id="HORASEXTC" model="hr.salary.rule.category">
+            <field name="name">HORAS EXTRAS</field>
+            <field name="code">HEXT</field>
+        </record>
+
+        <record id="DESC" model="hr.salary.rule.category">
+            <field name="name">DESCUENTOS</field>
+            <field name="code">DESC</field>
+        </record>						
+
+        <record id="APEMP" model="hr.salary.rule.category">
+            <field name="name">APORTE EMPRESA</field>
+            <field name="code">APEMP</field>
+        </record>						
+						
+        <record id="OTDESC" model="hr.salary.rule.category">
+            <field name="name">OTROS DESCUENTOS</field>
+            <field name="code">OTDESC</field>
+        </record>
+						
+						
+        <record id="SUBT" model="hr.salary.rule.category">
+            <field name="name">SUBTOTAL</field>
+            <field name="code">SUBT</field>						
+        </record>
+
+        <!-- Salary Rules -->
+        <record id="hr_rule_1" model="hr.salary.rule">
+            <field name="name">SUELDO BASE</field>
+            <field name="sequence" eval="1"/>
+            <field name="code">SUELDO</field>
+            <field name="category_id" ref="ING"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">freedias = 0
+try:
+ freedias = worked_days.Licencia.number_of_days
+except:
+ freedias = 0.0
+try:
+ freedias = freedias + worked_days.No_Trabajado.number_of_days
+except:
+ freedias = freedias
+
+biwage = contract.wage / 2
+daysw = worked_days.WORK100.number_of_days
+
+wageday = biwage / daysw
+
+result = wageday * (daysw - freedias)</field>
+        </record>
+
+        <record id="hr_rule_2" model="hr.salary.rule">
+            <field name="code">BONO</field>
+            <field name="category_id" ref="OTING"/>
+            <field name="amount_select">code</field>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.BONO.amount != 0</field>
+            <field name="name">BONOS</field>
+            <field name="sequence" eval="3"/>
+            <field name="amount_python_compute">result = (inputs.BONO and inputs.BONO.amount)</field>
+         </record>
+
+        <record id="hr_rule_input_bono" model="hr.rule.input">
+            <field name="code">BONO</field>
+            <field name="name">BONOS</field>
+            <field name="input_id" ref="hr_rule_2"/>
+        </record>
+
+        <record id="hr_news_bono" model="hr.news">
+            <field name="name">BONO</field>
+            <field name="desc">BONO</field>
+            <field name="inputs_id" ref="hr_rule_input_bono"/>
+        </record>
+
+        <record id="hr_rule_3" model="hr.salary.rule">
+            <field name="code">VIATICO</field>
+            <field name="category_id" ref="OTING"/>
+            <field name="amount_select">code</field>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.VIATICO.amount != 0</field>
+            <field name="name">VIATICO</field>
+            <field name="sequence" eval="3"/>
+            <field name="amount_python_compute">result = (inputs.VIATICO and inputs.VIATICO.amount)</field>
+         </record>
+
+        <record id="hr_rule_input_viatico" model="hr.rule.input">
+            <field name="code">VIATICO</field>
+            <field name="name">VIATICO</field>
+            <field name="input_id" ref="hr_rule_3"/>
+        </record>
+
+        <record id="hr_news_viatico" model="hr.news">
+            <field name="name">VIATICO</field>
+            <field name="desc">VIATICO</field>
+            <field name="inputs_id" ref="hr_rule_input_viatico"/>
+        </record>
+
+        <record id="hr_rule_4" model="hr.salary.rule">
+            <field name="code">HOREXT</field>
+            <field name="category_id" ref="OTING"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = categories.HEXT != 0</field>
+            <field name="amount_select">code</field>
+            <field name="name">HORAS EXTRAS</field>
+            <field name="sequence" eval="3"/>
+            <field name="amount_python_compute">result = categories.HEXT</field>
+         </record>
+
+        <record id="hr_rule_4_1" model="hr.salary.rule">
+            <field name="code">HOREXTDIURNA</field>
+            <field name="category_id" ref="HORASEXTC"/>
+            <field name="appears_on_payslip">False</field>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.HOREXTDIURNA.amount != 0</field>
+            <field name="amount_select">code</field>
+            <field name="name">HORAS EXTRAS DIURNAS</field>
+            <field name="sequence" eval="2"/>
+            <field name="amount_python_compute">result = inputs.HOREXTDIURNA.amount * 1.25</field>
+         </record>
+
+        <record id="hr_rule_input_horasext_diurnas" model="hr.rule.input">
+            <field name="code">HOREXTDIURNA</field>
+            <field name="name">HORAS EXTRAS DIURNAS</field>
+            <field name="input_id" ref="hr_rule_4_1"/>
+        </record>
+
+        <record id="hr_news_horasext_diurnas" model="hr.news">
+            <field name="name">HORAS EXTRAS DIURNAS</field>
+            <field name="desc">HORAS EXTRAS DIURNAS</field>
+            <field name="inputs_id" ref="hr_rule_input_horasext_diurnas"/>
+        </record>
+
+        <record id="hr_rule_4_2" model="hr.salary.rule">
+            <field name="code">HOREXTNOTURNA</field>
+            <field name="category_id" ref="HORASEXTC"/>
+            <field name="appears_on_payslip">False</field>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.HOREXTNOTURNA.amount != 0</field>
+            <field name="amount_select">code</field>
+            <field name="name">HORAS EXTRAS NOCTURNAS</field>
+            <field name="sequence" eval="2"/>
+            <field name="amount_python_compute">result = inputs.HOREXTNOTURNA.amount * 1.5</field>
+         </record>
+
+        <record id="hr_rule_input_horasext_nocturnas" model="hr.rule.input">
+            <field name="code">HOREXTNOTURNA</field>
+            <field name="name">HORAS EXTRAS NOCTURNAS</field>
+            <field name="input_id" ref="hr_rule_4_2"/>
+        </record>
+
+        <record id="hr_news_horasext_nocturnas" model="hr.news">
+            <field name="name">HORAS EXTRAS NOCTURNAS</field>
+            <field name="desc">HORAS EXTRAS NOCTURNAS</field>
+            <field name="inputs_id" ref="hr_rule_input_horasext_nocturnas"/>
+        </record>
+
+        <record id="hr_rule_4_3" model="hr.salary.rule">
+            <field name="code">HOREXTMIXTA</field>
+            <field name="category_id" ref="HORASEXTC"/>
+            <field name="appears_on_payslip">False</field>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.HOREXTMIXTA.amount != 0</field>
+            <field name="amount_select">code</field>
+            <field name="name">HORAS EXTRAS MIXTA</field>
+            <field name="sequence" eval="2"/>
+            <field name="amount_python_compute">result = inputs.HOREXTMIXTA.amount * 1.75</field>
+         </record>
+
+        <record id="hr_rule_input_horasext_mixta" model="hr.rule.input">
+            <field name="code">HOREXTMIXTA</field>
+            <field name="name">HORAS EXTRAS MIXTA</field>
+            <field name="input_id" ref="hr_rule_4_3"/>
+        </record>
+
+        <record id="hr_news_horasext_mixta" model="hr.news">
+            <field name="name">HORAS EXTRAS MIXTA</field>
+            <field name="desc">HORAS EXTRAS MIXTA</field>
+            <field name="inputs_id" ref="hr_rule_input_horasext_mixta"/>
+        </record>
+
+        <record id="hr_rule_4_4" model="hr.salary.rule">
+            <field name="code">HOREXTDOMINGO</field>
+            <field name="category_id" ref="HORASEXTC"/>
+            <field name="appears_on_payslip">False</field>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.HOREXTDOMINGO.amount != 0</field>
+            <field name="amount_select">code</field>
+            <field name="name">HORAS EXTRAS DOMINGO</field>
+            <field name="sequence" eval="2"/>
+            <field name="amount_python_compute">result = inputs.HOREXTDOMINGO.amount * 0.5</field>
+         </record>
+
+        <record id="hr_rule_input_horasext_domingo" model="hr.rule.input">
+            <field name="code">HOREXTDOMINGO</field>
+            <field name="name">HORAS EXTRAS DOMINGO</field>
+            <field name="input_id" ref="hr_rule_4_4"/>
+        </record>
+
+        <record id="hr_news_horasext_domingo" model="hr.news">
+            <field name="name">HORAS EXTRAS DOMINGO</field>
+            <field name="desc">HORAS EXTRAS DOMINGO</field>
+            <field name="inputs_id" ref="hr_rule_input_horasext_domingo"/>
+        </record>
+
+        <record id="hr_rule_4_5" model="hr.salary.rule">
+            <field name="code">HOREXTFERIADO</field>
+            <field name="category_id" ref="HORASEXTC"/>
+            <field name="appears_on_payslip">False</field>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.HOREXTFERIADO.amount != 0</field>
+            <field name="amount_select">code</field>
+            <field name="name">HORAS EXTRAS FERIADO</field>
+            <field name="sequence" eval="2"/>
+            <field name="amount_python_compute">result = inputs.HOREXTFERIADO.amount * 1.5</field>
+         </record>
+
+        <record id="hr_rule_input_horasext_feriado" model="hr.rule.input">
+            <field name="code">HOREXTFERIADO</field>
+            <field name="name">HORAS EXTRAS FERIADO</field>
+            <field name="input_id" ref="hr_rule_4_5"/>
+        </record>
+
+        <record id="hr_news_horasext_feriado" model="hr.news">
+            <field name="name">HORAS EXTRAS FERIADO</field>
+            <field name="desc">HORAS EXTRAS FERIADO</field>
+            <field name="inputs_id" ref="hr_rule_input_horasext_feriado"/>
+        </record>
+
+        <record id="hr_rule_4_6" model="hr.salary.rule">
+            <field name="code">HOREXTEXCESO</field>
+            <field name="category_id" ref="HORASEXTC"/>
+            <field name="appears_on_payslip">False</field>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.HOREXTEXCESO.amount != 0</field>
+            <field name="amount_select">code</field>
+            <field name="name">HORAS EXTRAS EXCESO</field>
+            <field name="sequence" eval="2"/>
+            <field name="amount_python_compute">result = inputs.HOREXTEXCESO.amount * 0.75</field>
+         </record>
+
+        <record id="hr_rule_input_horasext_exceso" model="hr.rule.input">
+            <field name="code">HOREXTEXCESO</field>
+            <field name="name">HORAS EXTRAS EXCESO</field>
+            <field name="input_id" ref="hr_rule_4_6"/>
+        </record>
+
+        <record id="hr_news_horasext_exceso" model="hr.news">
+            <field name="name">HORAS EXTRAS EXCESO</field>
+            <field name="desc">HORAS EXTRAS EXCESO</field>
+            <field name="inputs_id" ref="hr_rule_input_horasext_exceso"/>
+        </record>
+
+        <record id="hr_rule_5" model="hr.salary.rule">
+            <field name="code">DECIMO</field>
+            <field name="category_id" ref="OTING"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.DECIMO.amount != 0</field>
+            <field name="amount_select">code</field>
+            <field name="name">DECIMO</field>
+            <field name="sequence" eval="3"/>
+            <field name="amount_python_compute">result = (inputs.DECIMO and inputs.DECIMO.amount)</field>
+         </record>
+
+        <record id="hr_rule_input_decimo" model="hr.rule.input">
+            <field name="code">DECIMO</field>
+            <field name="name">DECIMO</field>
+            <field name="input_id" ref="hr_rule_5"/>
+        </record>
+
+        <record id="hr_rule_6" model="hr.salary.rule">
+            <field name="name">TOTAL INGRESOS</field>
+            <field name="sequence" eval="4"/>
+            <field name="appears_on_payslip">False</field>
+            <field name="code">TOTING</field>
+            <field name="category_id" ref="SUBT"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result=categories.ING + categories.OTING</field>
+        </record>
+
+        <record id="hr_rule_6_1" model="hr.salary.rule">
+            <field name="name">TOTAL OTROS INGRESOS</field>
+            <field name="sequence" eval="4"/>
+            <field name="code">TOTOTRING</field>
+            <field name="appears_on_payslip">False</field>
+            <field name="category_id" ref="SUBT"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result=categories.OTING</field>
+        </record>
+
+        <record id="hr_rule_7" model="hr.salary.rule">
+            <field name="name">SEGURO SOCIAL</field>
+            <field name="sequence" eval="5"/>
+            <field name="code">SEGSOC</field>
+            <field name="category_id" ref="DESC"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">try:
+  ext_hours = HOREXT
+except:
+ ext_hours = 0
+try:
+  decimo = DECIMO
+except:
+ decimo = 0
+result = ((SUELDO + ext_hours) * -0.0975) + (decimo * -0.0725)</field>
+        </record>
+
+        <record id="hr_rule_8" model="hr.salary.rule">
+            <field name="name">SEGURO EDUCACION</field>
+            <field name="sequence" eval="5"/>
+            <field name="code">SEGEDU</field>
+            <field name="category_id" ref="DESC"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">try:
+  ext_hours = HOREXT
+except:
+  ext_hours = 0
+result = (SUELDO + ext_hours) * -0.0125</field>
+        </record>
+
+        <record id="hr_rule_9" model="hr.salary.rule">
+            <field name="code">ISLR</field>
+            <field name="category_id" ref="DESC"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.ISLR.amount != 0</field>
+            <field name="amount_select">code</field>
+            <field name="name">ISLR</field>
+            <field name="sequence" eval="5"/>
+            <field name="amount_python_compute">result = (inputs.ISLR and inputs.ISLR.amount) * -1</field>
+         </record>
+
+        <record id="hr_rule_input_islr" model="hr.rule.input">
+            <field name="code">ISLR</field>
+            <field name="name">ISLR</field>
+            <field name="input_id" ref="hr_rule_9"/>
+        </record>
+
+        <record id="hr_news_islr" model="hr.news">
+            <field name="name">ISLR</field>
+            <field name="desc">ISLR</field>
+            <field name="inputs_id" ref="hr_rule_input_islr"/>
+        </record>
+
+        <record id="hr_rule_10" model="hr.salary.rule">
+            <field name="code">BAC</field>
+            <field name="category_id" ref="DESC"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.BAC.amount != 0</field>
+            <field name="amount_select">code</field>
+            <field name="name">CREDITO BANCARIO</field>
+            <field name="sequence" eval="5"/>
+            <field name="amount_python_compute">result = (inputs.BAC and inputs.BAC.amount) * -1</field>
+         </record>
+
+        <record id="hr_rule_input_credbac" model="hr.rule.input">
+            <field name="code">BAC</field>
+            <field name="name">BAC</field>
+            <field name="input_id" ref="hr_rule_10"/>
+        </record>
+
+        <record id="hr_rule_11" model="hr.salary.rule">
+            <field name="code">CABANI</field>
+            <field name="category_id" ref="DESC"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.CABANI.amount != 0</field>
+            <field name="amount_select">code</field>
+            <field name="name">CREDITO C.A / BANI</field>
+            <field name="sequence" eval="5"/>
+            <field name="amount_python_compute">result = (inputs.CABANI and inputs.CABANI.amount) * -1</field>
+         </record>
+
+        <record id="hr_rule_input_cabani" model="hr.rule.input">
+            <field name="code">CABANI</field>
+            <field name="name">CREDITO C.A / BANI</field>
+            <field name="input_id" ref="hr_rule_11"/>
+        </record>
+
+        <record id="hr_rule_12" model="hr.salary.rule">
+            <field name="code">CREDCORP</field>
+            <field name="category_id" ref="DESC"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.CREDCORP.amount != 0</field>
+            <field name="amount_select">code</field>
+            <field name="name">CREDITO CORPORATIVO</field>
+            <field name="sequence" eval="5"/>
+            <field name="amount_python_compute">result = (inputs.CREDCORP and inputs.CREDCORP.amount) * -1</field>
+         </record>
+
+        <record id="hr_rule_input_credcorp" model="hr.rule.input">
+            <field name="code">CREDCORP</field>
+            <field name="name">CREDITO CORPORATIVO</field>
+            <field name="input_id" ref="hr_rule_12"/>
+        </record>
+
+        <record id="hr_rule_13" model="hr.salary.rule">
+            <field name="code">DESCCEL</field>
+            <field name="category_id" ref="DESC"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.DESCCEL.amount != 0</field>
+            <field name="amount_select">code</field>
+            <field name="name">DESCUENTO CELULAR</field>
+            <field name="sequence" eval="5"/>
+            <field name="amount_python_compute">result = (inputs.DESCCEL and inputs.DESCCEL.amount) * -1</field>
+         </record>
+
+        <record id="hr_rule_input_desccel" model="hr.rule.input">
+            <field name="code">DESCCEL</field>
+            <field name="name">DESCUENTO CELULAR</field>
+            <field name="input_id" ref="hr_rule_13"/>
+        </record>
+
+        <record id="hr_news_desccel" model="hr.news">
+            <field name="name">DESCUENTO CELULAR</field>
+            <field name="desc">DESCUENTO CELULAR</field>
+            <field name="inputs_id" ref="hr_rule_input_desccel"/>
+        </record>
+
+        <record id="hr_rule_14" model="hr.salary.rule">
+            <field name="code">PRESTISLR</field>
+            <field name="category_id" ref="DESC"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.PRESTISLR.amount != 0</field>
+            <field name="amount_select">code</field>
+            <field name="name">PREST. ISLR</field>
+            <field name="sequence" eval="5"/>
+            <field name="amount_python_compute">result = (inputs.PRESTISLR and inputs.PRESTISLR.amount) * -1</field>
+         </record>
+
+        <record id="hr_rule_input_prestislr" model="hr.rule.input">
+            <field name="code">PRESTISLR</field>
+            <field name="name">PREST. ISLR</field>
+            <field name="input_id" ref="hr_rule_14"/>
+        </record>
+
+        <record id="hr_news_prestislr" model="hr.news">
+            <field name="name">PREST. ISLR</field>
+            <field name="desc">PREST. ISLR</field>
+            <field name="inputs_id" ref="hr_rule_input_prestislr"/>
+        </record>
+
+        <record id="hr_rule_15" model="hr.salary.rule">
+            <field name="code">PRESTDESC</field>
+            <field name="category_id" ref="DESC"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.PRESTDESC.amount != 0</field>
+            <field name="amount_select">code</field>
+            <field name="name">PREST. Y DESCUENTOS</field>
+            <field name="sequence" eval="5"/>
+            <field name="amount_python_compute">result = (inputs.PRESTDESC and inputs.PRESTDESC.amount) * -1</field>
+         </record>
+
+        <record id="hr_rule_input_prestdesc" model="hr.rule.input">
+            <field name="code">PRESTDESC</field>
+            <field name="name">PREST. Y DESCUENTOS</field>
+            <field name="input_id" ref="hr_rule_15"/>
+        </record>
+
+        <record id="hr_news_prestdesc" model="hr.news">
+            <field name="name">PREST. Y DESCUENTOS</field>
+            <field name="desc">PREST. Y DESCUENTOS</field>
+            <field name="inputs_id" ref="hr_rule_input_prestdesc"/>
+        </record>
+
+        <record id="hr_rule_16" model="hr.salary.rule">
+            <field name="name">TOTAL EGRESOS</field>
+            <field name="sequence" eval="6"/>
+            <field name="code">TOTDESC</field>
+            <field name="category_id" ref="SUBT"/>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip">False</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = categories.DESC</field>
+        </record>
+
+        <record id="hr_rule_17" model="hr.salary.rule">
+            <field name="name">APORTE EMPRESA</field>
+            <field name="sequence" eval="7"/>
+            <field name="code">APTEMP</field>
+            <field name="category_id" ref="APEMP"/>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip">False</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = (SUELDO * 0.125) + (SUELDO * 0.015)</field>
+        </record>
+
+        <record id="hr_rule_18" model="hr.salary.rule">
+            <field name="name">TOTAL A PAGAR</field>
+            <field name="sequence" eval="9"/>
+            <field name="code">TOTPAGO</field>
+            <field name="category_id" ref="SUBT"/>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip">False</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = categories.ING + categories.OTING + categories.DESC</field>
+        </record>
+
+
+        <!-- Estructura Inputs -->
+	    <record id="hr_struct_pa" model="hr.payroll.structure">
+            <field name="name">Nomina Regular</field>
+            <field name="code">Nomina Regular</field>
+            <field name="parent_id"></field>
+            <field eval="[(6, 0, [ref('hr_rule_1'),ref('hr_rule_2'),ref('hr_rule_3'),ref('hr_rule_4'),ref('hr_rule_4_1'),
+            ref('hr_rule_4_2'),ref('hr_rule_4_3'),ref('hr_rule_4_4'),ref('hr_rule_4_5'),ref('hr_rule_4_6'),ref('hr_rule_5'),
+            ref('hr_rule_6'),ref('hr_rule_6_1'),ref('hr_rule_7'),ref('hr_rule_8'),ref('hr_rule_9'),ref('hr_rule_10'),
+            ref('hr_rule_11'),ref('hr_rule_12'),ref('hr_rule_13'),ref('hr_rule_14'),ref('hr_rule_15'),ref('hr_rule_16'),
+            ref('hr_rule_17'),ref('hr_rule_18')])]" name="rule_ids"/>
+        </record>
+
+        <record id="hr_resource_monthly" model="resource.calendar">
+            <field name="name">Jornada 48H/8H</field>
+        </record>
+
+        <!-- Horarios Inputs -->
+        <record id="hr_resource_calendar_attendance_mon_dia" model="resource.calendar.attendance">
+            <field name="name">Lunes Dia</field>
+            <field name="hour_from">9</field>
+            <field name="hour_to">13</field>
+            <field name="dayofweek">0</field>
+            <field name="calendar_id"  ref="hr_resource_monthly"/>
+        </record>
+
+        <record id="hr_resource_calendar_attendance_mon_tarde" model="resource.calendar.attendance">
+            <field name="name">Lunes Tarde</field>
+            <field name="hour_from">14</field>
+            <field name="hour_to">18</field>
+            <field name="dayofweek">0</field>
+            <field name="calendar_id"  ref="hr_resource_monthly"/>
+        </record>
+
+       <record id="hr_resource_calendar_attendance_tue_dia" model="resource.calendar.attendance">
+            <field name="name">Martes Dia</field>
+            <field name="hour_from">9</field>
+            <field name="hour_to">13</field>
+            <field name="dayofweek">1</field>
+            <field name="calendar_id"  ref="hr_resource_monthly"/>
+        </record>
+
+        <record id="hr_resource_calendar_attendance_tue_tarde" model="resource.calendar.attendance">
+            <field name="name">Martes Tarde</field>
+            <field name="hour_from">14</field>
+            <field name="hour_to">18</field>
+            <field name="dayofweek">1</field>
+            <field name="calendar_id"  ref="hr_resource_monthly"/>
+        </record>
+
+        <record id="hr_resource_calendar_attendance_wed_dia" model="resource.calendar.attendance">
+            <field name="name">Miercoles Dia</field>
+            <field name="hour_from">9</field>
+            <field name="hour_to">13</field>
+            <field name="dayofweek">2</field>
+            <field name="calendar_id"  ref="hr_resource_monthly"/>
+        </record>
+
+        <record id="hr_resource_calendar_attendance_wed_tarde" model="resource.calendar.attendance">
+            <field name="name">Miercoles Tarde</field>
+            <field name="hour_from">14</field>
+            <field name="hour_to">18</field>
+            <field name="dayofweek">2</field>
+            <field name="calendar_id"  ref="hr_resource_monthly"/>
+        </record>
+
+       <record id="hr_resource_calendar_attendance_thru_dia" model="resource.calendar.attendance">
+            <field name="name">Jueves Dia</field>
+            <field name="hour_from">9</field>
+            <field name="hour_to">13</field>
+            <field name="dayofweek">3</field>
+            <field name="calendar_id"  ref="hr_resource_monthly"/>
+        </record>
+
+        <record id="hr_resource_calendar_attendance_thru_tarde" model="resource.calendar.attendance">
+            <field name="name">Jueves Tarde</field>
+            <field name="hour_from">14</field>
+            <field name="hour_to">18</field>
+            <field name="dayofweek">3</field>
+            <field name="calendar_id"  ref="hr_resource_monthly"/>
+        </record>
+
+        <record id="hr_resource_calendar_attendance_fri_dia" model="resource.calendar.attendance">
+            <field name="name">Viernes Dia</field>
+            <field name="hour_from">9</field>
+            <field name="hour_to">13</field>
+            <field name="dayofweek">4</field>
+            <field name="calendar_id"  ref="hr_resource_monthly"/>
+        </record>
+
+        <record id="hr_resource_calendar_attendance_fri_tarde" model="resource.calendar.attendance">
+            <field name="name">Viernes Tarde</field>
+            <field name="hour_from">14</field>
+            <field name="hour_to">18</field>
+            <field name="dayofweek">4</field>
+            <field name="calendar_id" ref="hr_resource_monthly"/>
+        </record>
+
+       <record id="hr_resource_calendar_attendance_sat_dia" model="resource.calendar.attendance">
+            <field name="name">Sabado Dia</field>
+            <field name="hour_from">9</field>
+            <field name="hour_to">13</field>
+            <field name="dayofweek">5</field>
+            <field name="calendar_id"  ref="hr_resource_monthly"/>
+        </record>
+
+        <record id="hr_resource_calendar_attendance_sat_tarde" model="resource.calendar.attendance">
+            <field name="name">Sabado Tarde</field>
+            <field name="hour_from">14</field>
+            <field name="hour_to">18</field>
+            <field name="dayofweek">5</field>
+            <field name="calendar_id"  ref="hr_resource_monthly"/>
+        </record>
+    </data>						
+</odoo>

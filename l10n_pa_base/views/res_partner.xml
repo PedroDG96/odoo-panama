@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <odoo>
+    <data>
+        <!-- Add instructor field to existing view -->
+        <record model="ir.ui.view" id="partner_instructor_form_view">
+            <field name="name">res.partner.form.inherited</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+               <div class="o_row" position="after" >
+                    <div class="o_row" name="ruc">
+                        <field name="ruc" string="RUC:" placeholder="Identificador Fiscal" required="1"/>
+                    </div>
+               </div>
+               <field name="phone" position="before">
+                   <field name="act_economica" string="Actividad Económica" placeholder="Actividad Económica" />
+                   <field name="por_retencion" />
+               </field>
+            </field>
+        </record>
+
+
+     <record model="ir.ui.view" id="view_res_partner_pa_tree_view">
+        <field name="name">Partners</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_tree"/>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <field name="display_name" position="after">
+               <field name="ruc"/>
+            </field>
+        </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="view_res_partner_pa_filter">
+        <field name="name">Partners</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="type">search</field>
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+               <field name="ruc" filter_domain="['|','|',('ruc','ilike',self),('ref','=',self),('vat','ilike',self)]"/>
+            </field>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_inh_res_partner_kanban_view">
+        <field name="name">inh.partner.kanban.view</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.res_partner_kanban_view"/>
+        <field name="arch" type="xml">
+            <field name="display_name" position="before">
+               <field name="ref"/>
+               <field name="ruc"/>
+            </field>
+            <xpath expr="//div[@class='oe_kanban_details']//field[@name='display_name']" position="after">
+                <br></br>
+                <strong class="oe_partner_heading"><field name="ruc"/></strong>
+            </xpath>
+        </field>
+    </record>
+
+    </data>
+</odoo>

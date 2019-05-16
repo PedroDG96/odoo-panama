@@ -1,0 +1,134 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="hr_credit_form_view">
+            <field name="name">hr.credit.form</field>
+            <field name="model">hr.credit</field>
+            <field name="arch" type="xml">
+                <form string="HR Credit">
+                    <header>
+                        <button name="action_done" states="draft" string="Done Credit" class="btn-primary o_delivery_done" type="object" />
+                        <button name="action_cancel" states="draft,done" type="object" string="Cancel"/>
+                        <button name="action_draft" states="cancel,done" type="object" string="Set to Draft"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,done,cancel"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                        <h1>
+                            <field name="name" readonly="1"/>
+                        </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="date" attrs="{'readonly': [('state', 'in', ('done', 'cancel'))]}"/>
+                                <field name="employee_id" attrs="{'readonly': [('state', 'in', ('done', 'cancel'))]}"/>
+                                <field name="init_date" attrs="{'readonly': [('state', 'in', ('done', 'cancel'))]}"/>
+                            </group>
+                            <group>
+                                <field name="amount" attrs="{'readonly': [('state', 'in', ('done', 'cancel'))]}"/>
+                                <field name="dues" attrs="{'readonly': [('state', 'in', ('done', 'cancel'))]}"/>
+                                <field name="discount_type" attrs="{'readonly': [('state', 'in', ('done', 'cancel'))]}"/>
+                                <field name="inputs_id" attrs="{'readonly': [('state', 'in', ('done', 'cancel'))]}"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="HR Credit Dues">
+                                <field name="hr_credit_line_id" mode="tree,kanban"
+                                attrs="{'readonly': [('state', 'in', ('done','cancel'))]}">
+                                    <form string="HR Credit Lines">
+                                        <group>
+                                            <group>
+                                                <field name="sequence" readonly="True"/>
+                                                <field name="discount_date"/>
+                                                <field name="amount"/>
+                                                <field name="ispaid"/>
+                                            </group>
+                                        </group>
+                                    </form>
+                                    <tree string="HR Credit Lines" editable="bottom">
+                                        <field name="sequence" readonly="True"/>
+                                        <field name="discount_date"/>
+                                        <field name="amount"/>
+                                        <field name="ispaid"/>
+                                    </tree>
+                                    <kanban class="o_kanban_mobile">
+                                        <field name="sequence" readonly="True"/>
+                                        <field name="discount_date"/>
+                                        <field name="amount"/>
+                                        <field name="ispaid"/>
+                                    </kanban>
+                                </field>
+                                <group class="oe_subtotal_footer oe_right">
+                                    <field name="amount_total"/>
+                                    <field name="paid_amount"/>
+                                    <field name="due_amount" class="oe_subtotal_footer_separator"/>
+                                </group>
+                            </page>
+                            <page string="Note">
+                                <field name="description"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_hr_credit_tree" model="ir.ui.view">
+            <field name="name">hr.credit.tree</field>
+            <field name="model">hr.credit</field>
+            <field name="priority">2</field>
+            <field name="arch" type="xml">
+                <tree string="HR Credit">
+                    <field name="name" string="HR Credit Number"/>
+                    <field name="date"/>
+                    <field name="employee_id"/>
+                    <field name="dues"/>
+                    <field name="amount"/>
+                    <field name="state" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_hr_credit_line_tree" model="ir.ui.view">
+            <field name="name">hr.credit.line.tree</field>
+            <field name="model">hr.credit.line</field>
+            <field name="arch" type="xml">
+                <tree string="HR Credit Lines" create="false">
+                    <field name="credit_id"/>
+                    <field name="discount_date"/>
+                    <field name="amount"/>
+                    <field name="ispaid"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_hr_credit_calendar" model="ir.ui.view">
+            <field name="name">hr.credit.calendar</field>
+            <field name="model">hr.credit</field>
+            <field name="arch" type="xml">
+                <calendar string="HR Credits" color="state" date_start="date">
+                    <field name="employee_id"/>
+                    <field name="amount"/>
+                </calendar>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="hr_credit_list_action">
+            <field name="name">HR Credits</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hr.credit</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,calendar</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Create a HR Credit.
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="hr_credit_menu" name="HR Credits"
+                  parent="hr_payroll.menu_hr_payroll_root"
+                  action="hr_credit_list_action"
+                  sequence="15"/>
+
+    </data>
+</odoo>

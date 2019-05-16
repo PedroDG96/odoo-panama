@@ -1,0 +1,5 @@
+D:\GitHub\Marlon\carlos-repo\C#\OdooConectFiscal\Connect\bin\Release\Connect.dll
+D:\GitHub\Marlon\carlos-repo\C#\OdooConectFiscal\Connect\bin\Release\Connect.pdb
+D:\GitHub\Marlon\carlos-repo\C#\OdooConectFiscal\Connect\bin\Release\CookComputing.XmlRpcV2.dll
+D:\GitHub\Marlon\carlos-repo\C#\OdooConectFiscal\Connect\obj\Release\Connect.dll
+D:\GitHub\Marlon\carlos-repo\C#\OdooConectFiscal\Connect\obj\Release\Connect.pdb

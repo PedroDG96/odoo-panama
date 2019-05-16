@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="hr_news_employee_assignment_wizard" model="ir.ui.view">
+            <field name="name">hr.news.employee.assignment.wizard</field>
+            <field name="model">hr.news.employee.assignment</field>
+            <field name="arch" type="xml">
+                <form string="News Employee Assignment">
+                    <label string="Select a new, set amount value, assign a employee, and define a date range."/>
+                    <footer>
+                        <button name="assign" type="object" class="oe_highlight"/>
+                        <button string="close" class="oe_link" special="cancel" />
+                    </footer>
+                    <group>
+                        <group>
+                            <field name="news_ids" required="1" widget="selection"/>
+                            <field name="amount" required="1"/>
+                        </group>
+                        <group>
+                            <field name="date_from" required="1"/>
+                            <field name="date_to"/>
+                        </group>
+                    </group>
+                    <field name="employee_ids" required="1"/>
+                </form>
+            </field>
+        </record>
+
+        <record id="hr_news_employee_assignment_wizard_action" model="ir.actions.act_window">
+            <field name="name">News Employee Assignment</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hr.news.employee.assignment</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem
+            parent="l10n_pa_hr_payroll.hr_news_configuration_menu"
+            sequence="2"
+            name="News Assignment"
+            action="hr_news_employee_assignment_wizard_action"
+            id="hr_news_employee_assignment_wizard_menu"
+           />
+    </data>
+</odoo>
